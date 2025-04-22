@@ -307,15 +307,7 @@ export default function Navbar() {
       >
         {/* Mobile Menu Header */}
         <div className="p-0 flex items-center justify-between border-b border-gray-100">
-          <div className="flex items-center space-x-3">
-            <Image 
-              src="/images/logo.jpg" 
-              alt="Nyati Cement Logo" 
-              width={55} 
-              height={55}
-              className="object-contain"
-            />
-          </div>
+
           <button 
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             onClick={toggleMenu}
@@ -338,7 +330,7 @@ export default function Navbar() {
                         ${activeDropdown === index ? 'text-nyati-orange' : 'text-nyati-navy'}`}
                       onClick={() => toggleMobileDropdown(index)}
                     >
-                      <span className="font-medium">{link.name}</span>
+                      <span className="font-normal">{link.name}</span>
                       <svg 
                         className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === index ? 'rotate-180' : ''}`} 
                         fill="none" 
