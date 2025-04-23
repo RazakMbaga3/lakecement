@@ -146,7 +146,7 @@ export default function SustainabilityPage() {
         {/* Full-width Hero Banner - Height reduced */}
         <div className="relative w-full h-48 md:h-72 overflow-hidden">
           <Image
-            src="/images/sustainability/banner.jpg"
+            src="/images/factory3.png"
             alt="Sustainability at Nyati Cement"
             fill
             priority

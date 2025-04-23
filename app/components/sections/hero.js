@@ -12,12 +12,13 @@ export default function Hero() {
   
   // Slideshow images
   const slideshowImages = [
-    '/images/slideshow/1.jpg',
     '/images/slideshow/2.png',
-    '/images/slideshow/3.png',
-    '/images/slideshow/4.jpg',
-    '/images/slideshow/5.jpg',
-    '/images/slideshow/6.png'
+    '/images/slideshow/4.png',
+    '/images/slideshow/5.png',
+    '/images/block2.png',
+    '/images/block1.jpg',
+    '/images/factory1.png',
+    '/images/factory3.png'
   ]
 
   // Effect for slideshow autoplay
@@ -131,8 +132,6 @@ export default function Hero() {
             priority
             className="object-cover"
           />
-          {/* Semi-transparent gradient overlay with reduced opacity */}
-          <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/70 to-navy-500/60"></div>
         </motion.div>
       </AnimatePresence>
 

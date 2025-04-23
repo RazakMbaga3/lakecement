@@ -160,7 +160,6 @@ export default function NewsPage() {
           className="absolute inset-0 w-full h-full"
           style={{ y, opacity }}
         >
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
           <div className="absolute inset-0 bg-[url('/images/news/RC-Chalamila.png')] bg-cover bg-center z-0"></div>
           
           {/* Decorative Elements */}
@@ -203,9 +202,6 @@ export default function NewsPage() {
               <h1 className="text-white text-4xl md:text-5xl font-bold mb-3 font-futura">
                 News & Updates
               </h1>
-              <p className="text-white/90 text-sm md:text-base max-w-xl">
-                Stay informed with the latest developments at Lake Cement, where we're building a stronger future through innovation, quality, and community engagement.
-              </p>
             </motion.div>
           </div>
         </div>
