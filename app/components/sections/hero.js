@@ -12,7 +12,6 @@ export default function Hero() {
   
   // Slideshow images
   const slideshowImages = [
-    '/images/slideshow/2.png',
     '/images/slideshow/4.png',
     '/images/slideshow/5.png',
     '/images/block2.png',
