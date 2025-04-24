@@ -309,7 +309,7 @@ export default function VideoSection() {
                     </div>
                   </div>
                   <div className="md:w-2/3 md:pl-8">
-                    <h3 className="text-2xl font-bold mb-4">Nyati Cement Radio Commercials</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-nyati-orange">Nyati Cement Radio Commercials</h3>
                     <p className="text-white/80 mb-6">
                       Listen to our popular radio advertisements that highlight the quality, strength, and reliability of Nyati Cement products. Our commercials emphasize why Nyati Cement is the preferred choice for construction projects across Tanzania and neighboring countries.
                     </p>
