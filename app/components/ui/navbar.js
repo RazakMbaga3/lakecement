@@ -306,13 +306,13 @@ export default function Navbar() {
         } overflow-y-auto`}
       >
         {/* Mobile Menu Header */}
-        <div className="p-0 flex items-center justify-between border-b border-gray-100">
-
+        <div className="p-4 flex items-center justify-end border-b border-gray-100">
           <button 
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             onClick={toggleMenu}
+            aria-label="Close menu"
           >
-            <svg className="w-5 h-5 text-nyati-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-nyati-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

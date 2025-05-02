@@ -122,14 +122,28 @@ export default function Header() {
           {/* Mobile Navigation */}
           <AnimatePresence>
             {isMenuOpen && (
-              <motion.div 
-                initial={{ opacity: 0, x: "100%" }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: "100%" }}
-                transition={{ duration: 0.3 }}
-                className="fixed inset-0 bg-white z-40 lg:hidden"
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "tween", duration: 0.3 }}
+                className="fixed top-0 right-0 w-full max-w-sm h-full bg-white shadow-xl z-50 overflow-y-auto"
               >
-                <div className="flex flex-col h-full p-8 pt-24">
+                <div className="p-4 flex flex-col h-full">
+                  {/* Mobile Header with Close Button */}
+                  <div className="flex items-center justify-end mb-6">
+                    <button 
+                      onClick={toggleMenu}
+                      className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                      aria-label="Close menu"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nyati-dark-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Mobile Navigation Content */}
                   <nav>
                     <ul className="space-y-6">
                       <li>
