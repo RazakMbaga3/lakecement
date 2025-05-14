@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -95,36 +97,117 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Header remains the same */}
-      <header className="relative bg-gradient-to-r from-nyati-navy to-nyati-navy/90 py-16 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <svg className="absolute -right-16 -top-16 text-blue-500/10 w-96 h-96" viewBox="0 0 100 100" fill="currentColor">
-            <circle cx="50" cy="50" r="40" />
-          </svg>
-          <svg className="absolute -left-16 -bottom-16 text-nyati-orange/10 w-96 h-96" viewBox="0 0 100 100" fill="currentColor">
-            <rect x="10" y="10" width="80" height="80" />
-          </svg>
+    <div className="bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/contactus/call.jpg"
+              alt="Contact Us"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+          </div>
+
+          {/* Animated Decorative Elements */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.05, 0.15, 0.05] 
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
+          />
+          
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.03, 0.1, 0.03] 
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: 1.5
+            }}
+            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
+          />
+        </motion.div>
+
+        <div className="container mx-auto px-4 h-full relative z-10">
+          <div className="flex flex-col justify-center h-full max-w-4xl">
+            {/* Breadcrumb Navigation */}
+            <nav className="mb-6">
+              <motion.ol 
+                className="flex items-center space-x-2 text-sm text-white/80"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><span className="text-white">Contact</span></li>
+              </motion.ol>
+            </nav>
+
+            {/* Hero Title & Content */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Get in Touch
+              <br />
+              <span className="text-nyati-orange">With Us</span>
+            </motion.h1>
+
+            <motion.p 
+              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              Have a question or need assistance? Our team is here to help.
+              We aim to respond to all inquiries within 24 hours.
+            </motion.p>
+
+            {/* Key Metrics */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">24/7</div>
+                <div className="text-white text-sm">Support</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">&lt;1hr</div>
+                <div className="text-white text-sm">Response Time</div>
+              </div>
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">100%</div>
+                <div className="text-white text-sm">Customer Focus</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-white mb-3 inline-block relative">
-              Contact Us
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-nyati-orange"></span>
-            </h1>
-            <p className="text-blue-100 text-lg">
-              We're here to answer your questions and help with your cement needs. 
-              Get in touch with our experts today.
-            </p>
-          </motion.div>
-        </div>
-      </header>
+      </section>
 
       <div className="container max-w-7xl mx-auto px-4 py-12">
         {/* Redesigned Contact Cards Section */}

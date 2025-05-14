@@ -1,8 +1,11 @@
-'use client'
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef } from 'react';
-import { useState, useEffect } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import { useState, useEffect } from 'react';
+import { useScroll } from 'framer-motion';
 
 // Icons for core values
 const icons = {
@@ -181,60 +184,117 @@ export default function CodeOfConductPage() {
 
   return (
     <div className="bg-gray-50">
-      {/* Banner with Hero Image and Parallax */}
-       {/* Compact Banner with Parallax Effect */}
-            <div className="relative h-40 md:h-48 w-full overflow-hidden" ref={parallaxRef}>
+      {/* Hero Section with Modern Design */}
+      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0">
             <Image 
-            src="/images/aboutus/coc.webp" 
-            alt="Certification Quality Assurance" 
-            fill
-            className="object-cover"
-          />
-        {/* Overlay to ensure text readability */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundColor: 'rgba(17, 24, 39, 0.8)'
-          }}
-        />
-        
-        {/* Decorative elements */}
-        <motion.div 
-          className="absolute top-0 right-0 w-40 h-40 bg-nyati-navy/60 rounded-sm opacity-20"
-          style={{ 
-            x: 100, 
-            y: -20,
-            scale: 1 + scrollY * 0.001 
-          }}
-        />
-        
-        <motion.div 
-          className="absolute bottom-0 left-0 w-32 h-32 bg-nyati-navy/60 rounded-sm opacity-10"
-          style={{ 
-            x: -10, 
-            y: 20,
-            scale: 1 - scrollY * 0.001 
-          }}
-        />
+              src="/images/career7.jpg"
+              alt="Code of Conduct"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+          </div>
 
-        {/* Main content row */}
-        <div className="relative container mx-auto px-4 h-full flex items-center">
+          {/* Animated Decorative Elements */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row items-center justify-between w-full"
-          >
-           <div> <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold">
-              CODE OF CONDUCT
-            </h1>
-            </div>
-            <p className="text-blue-100 text-sm md:text-base mt-2 md:mt-0 md:ml-8 max-w-xl">
-              Our principles guide our actions and decisions at every level of the organization
-            </p>
-          </motion.div>
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.05, 0.15, 0.05] 
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
+          />
+          
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.03, 0.1, 0.03] 
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: 1.5
+            }}
+            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
+          />
+        </motion.div>
+
+        <div className="container mx-auto px-4 h-full relative z-10">
+          <div className="flex flex-col justify-center h-full max-w-4xl">
+            {/* Breadcrumb Navigation */}
+            <nav className="mb-6">
+              <motion.ol 
+                className="flex items-center space-x-2 text-sm text-white/80"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><Link href="/about" className="hover:text-nyati-orange transition-colors">About</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><span className="text-white">Code of Conduct</span></li>
+              </motion.ol>
+            </nav>
+
+            {/* Hero Title & Content */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Our Ethical
+              <br />
+              <span className="text-nyati-orange">Foundation</span>
+            </motion.h1>
+
+            <motion.p 
+              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              Our Code of Conduct guides our actions and decisions, ensuring the highest 
+              standards of business ethics and professional integrity.
+            </motion.p>
+
+            {/* Key Metrics */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">100%</div>
+                <div className="text-white text-sm">Compliance</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">0</div>
+                <div className="text-white text-sm">Tolerance for Corruption</div>
+              </div>
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">24/7</div>
+                <div className="text-white text-sm">Ethical Support</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <main className="container mx-auto px-4 max-w-5xl py-8">
         {/* Introduction with Card Layout */}
@@ -365,5 +425,5 @@ export default function CodeOfConductPage() {
         </motion.section>
       </main>
     </div>
-  )
+  );
 }

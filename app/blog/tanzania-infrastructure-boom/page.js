@@ -49,7 +49,8 @@ export default function TanzaniaInfrastructurePage() {
           alt="Tanzania's modern infrastructure development"
           width={1200}
           height={675}
-          className="object-cover rounded-sm"
+          className="obje
+          ct-cover rounded-sm"
         />
       </div>
 

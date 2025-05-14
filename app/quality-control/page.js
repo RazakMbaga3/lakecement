@@ -85,30 +85,114 @@ export default function QualityControlPage() {
       animate="visible" 
       className="bg-white"
     >
-      {/* Compact Banner - Simple Image Strip */}
-      <motion.div 
-        variants={fadeIn}
-        className="w-full h-48 relative overflow-hidden"
-      >
-        <div className="w-75% h-full flex">
-            <Image
-              src="/images/quality/banner.jpg" 
-              alt="Quality Control Process" 
-              fill
-              className="object-cover"
-            />
-        </div>
-      </motion.div>
+     {/* Hero Section */}
+           <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+             <motion.div
+               className="absolute inset-0 z-0"
+               initial={{ scale: 1.1 }}
+               animate={{ scale: 1 }}
+               transition={{ duration: 0.8 }}
+             >
+               <div className="absolute inset-0">
+                 <Image 
+                   src="/images/quality/QC.jpg"
+                   alt="Our Manufacturing Plant"
+                   fill
+                   priority
+                   className="object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+               </div>
+     
+               <motion.div 
+                 animate={{ 
+                   scale: [1, 1.1, 1],
+                   opacity: [0.05, 0.15, 0.05] 
+                 }}
+                 transition={{ 
+                   duration: 8, 
+                   repeat: Infinity, 
+                   repeatType: "reverse" 
+                 }}
+                 className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
+               />
+               
+               <motion.div 
+                 animate={{ 
+                   scale: [1, 1.2, 1],
+                   opacity: [0.03, 0.1, 0.03] 
+                 }}
+                 transition={{ 
+                   duration: 10, 
+                   repeat: Infinity,
+                   repeatType: "reverse",
+                   delay: 1.5
+                 }}
+                 className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
+               />
+             </motion.div>
+     
+             <div className="container mx-auto px-4 h-full relative z-10">
+               <div className="flex flex-col justify-center h-full max-w-4xl">
+                 <nav className="mb-6">
+                   <motion.ol 
+                     className="flex items-center space-x-2 text-sm text-white/80"
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     transition={{ delay: 0.2 }}
+                   >
+                     <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
+                     <li><span className="text-white/60">/</span></li>
+                     <li><Link href="/quality-control" className="text-white hover:text-nyati-orange transition-colors">Quality Control</Link></li>
+                   </motion.ol>
+                 </nav>
+     
+                 <motion.h1 
+                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.3 }}
+                 >
+                  Uncompromised Quality.
+                   <br />
+                   <span className="text-nyati-orange">Cement You Can Trust</span>
+                 </motion.h1>
+     
+                 <motion.p 
+                   className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.5 }}
+                 >
+                   Our commitment to quality starts long before the cement reaches your hands. Through automated systems, skilled oversight, and industry-leading standards, we deliver consistency you can count on.
+                 </motion.p>
+     
+                 <motion.div 
+                   className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.7 }}
+                 >
+                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                     <div className="text-nyati-orange text-2xl font-bold mb-1">ISO</div>
+                     <div className="text-white text-sm">Certified</div>
+                   </div>
+                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                     <div className="text-nyati-orange text-2xl font-bold mb-1">TBS</div>
+                     <div className="text-white text-sm">Approved</div>
+                   </div>
+                   <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                     <div className="text-nyati-orange text-2xl font-bold mb-1">100%</div>
+                     <div className="text-white text-sm">Quality Assured</div>
+                   </div>
+                 </motion.div>
+               </div>
+             </div>
+           </section>
 
       <div className="container mx-auto px-4 max-w-6xl py-4">
-        {/* Page Title Section */}
+        {/* Intro Section */}
         <motion.div variants={fadeIn} className="mb-4">
-          <motion.h1 
-            variants={slideUp} 
-            className="text-3xl font-bold text-nyati-orange mb-1"
-          >
-            QUALITY CONTROL
-          </motion.h1>
           <motion.p 
             variants={slideUp}
             className="text-sm text-nyati-dark-grey"
@@ -217,12 +301,12 @@ export default function QualityControlPage() {
               className="md:w-1/2 relative h-64 md:h-auto"
             >
               <Image
-                src="/images/quality/labmalik.png"
+                src="/images/quality/qcteam.jpg"
                 alt="Quality Control Laboratory"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/70 to-transparent mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/10 to-transparent mix-blend-multiply"></div>
             </motion.div>
             
             {/* Content side */}

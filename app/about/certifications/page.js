@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
+import { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-// Animation variants
 const fadeIn = {
   hidden: { opacity: 0 },
   visible: { 
@@ -142,50 +142,98 @@ export default function CertificationsPage() {
   const filteredCertifications = certifications.filter(section => section.category);
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="bg-gray-50"
-    >
-      {/* Compact Banner with Parallax Effect */}
-      <div className="relative h-40 md:h-48 w-full overflow-hidden" ref={parallaxRef}>
-      <Image 
-      src="/images/certifications/CERTIMG.jpg" 
-      alt="Certification Quality Assurance" 
-      fill
-      className="object-cover"
-    />
-        <div className="absolute inset-0 bg-black/40"></div>
-        {/* Page title */}
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="text-white mx-auto mt-12 px-4 relative z-10 text-center">
-              <h1 className="text-4xl font-bold text-white">
-                CERTIFICATIONS
-              </h1>
-            </div>
-          </motion.div>
-        </div>
-        
-        {/* Abstract shapes for visual interest */}
+    <div className="bg-gray-50">
+      {/* Hero Section with Modern Design */}
+      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
         <motion.div 
-          className="absolute bottom-0 right-0 w-64 h-64" 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.7, scale: 1 }}
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white/10 fill-current">
-            <path d="M37.5,-48.1C49.3,-40.9,60.1,-30.8,65.3,-18.1C70.4,-5.3,69.9,10.1,63.5,22.1C57.1,34.1,44.8,42.8,31.7,48.9C18.5,55,4.6,58.4,-10.2,58.8C-24.9,59.1,-40.5,56.3,-48.2,46.8C-55.9,37.2,-55.7,20.9,-57.4,4.7C-59,-11.5,-62.4,-27.7,-56.5,-38.7C-50.6,-49.7,-35.3,-55.5,-21.5,-61.5C-7.7,-67.4,4.6,-73.6,15.4,-69.5C26.2,-65.4,25.7,-55.2,37.5,-48.1Z" transform="translate(100 100)" />
-          </svg>
-        </motion.div>
-      </div>
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/certifications/CERTIMG.jpg"
+              alt="Our Certifications"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+          </div>
 
-      <div className="container mx-auto px-4 max-w-6xl py-6">
-        {/* Certifications Accordion Sections */}
+          {/* Animated Decorative Elements */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.05, 0.15, 0.05] 
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
+          />
+          
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.03, 0.1, 0.03] 
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity, 
+              repeatType: "reverse",
+              delay: 1.5
+            }}
+            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
+          />
+        </motion.div>
+
+        <div className="container mx-auto px-4 h-full relative z-10">
+          <div className="flex flex-col justify-center h-full max-w-4xl">
+            {/* Breadcrumb Navigation */}
+            <nav className="mb-6">
+              <motion.ol 
+                className="flex items-center space-x-2 text-sm text-white/80"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><Link href="/about" className="hover:text-nyati-orange transition-colors">About</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><span className="text-white">Certifications</span></li>
+              </motion.ol>
+            </nav>
+
+            {/* Hero Title & Content */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Quality
+              <br />
+              <span className="text-nyati-orange">Certifications</span>
+            </motion.h1>
+            <motion.p
+              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              Our commitment to excellence is validated by international standards and certifications.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      <main className="py-12">
         <motion.div variants={staggerContainer} className="space-y-6">
           {filteredCertifications.map((section, sectionIndex) => (
             <motion.section 
@@ -289,7 +337,7 @@ export default function CertificationsPage() {
     </div>
   </div>
 </motion.section>
-      </div>
-    </motion.div>
+      </main>
+    </div>
   );
 }

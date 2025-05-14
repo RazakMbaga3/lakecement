@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -135,56 +136,114 @@ export default function SustainabilityPage() {
 
   return (
     <div className="bg-gray-50">
-      {/* Hero Section - More compact */}
-      <motion.div
-        ref={heroRef}
-        initial="hidden"
-        animate={heroInView ? "visible" : "hidden"}
-        variants={fadeIn}
-        className="relative"
-      >
-        {/* Full-width Hero Banner - Height reduced */}
-        <div className="relative w-full h-48 md:h-72 overflow-hidden">
-          <Image
-            src="/images/factory3.png"
-            alt="Sustainability at Nyati Cement"
-            fill
-            priority
-            className="object-cover object-center"
+      {/* Hero Section with Modern Design */}
+      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/sustainability/banner2.jpg"
+              alt="Sustainability at Nyati Cement"              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+          </div>
+
+          {/* Animated Decorative Elements */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.05, 0.15, 0.05] 
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
           
-   {/* Centered Banner Section */}
-<motion.div 
-  variants={fadeIn}
-  className="w-full relative overflow-hidden py-16"
->
-  <div className="container mx-auto px-4 max-w-4xl text-left">
-    <motion.h1 
-      variants={slideUp} 
-      className="text-4xl font-bold mb-0"
-    >
-      <span className="text-white">Building a </span><br></br>
-      <span className="text-nyati-orange">Sustainable</span><br></br>
-      <span className="text-white"> Future</span>
-    </motion.h1>
-  </div>
-</motion.div>
-          
-          {/* Sustainability Badge */}
-          <div className="absolute right-8 bottom-16 w-20 h-20 md:w-24 md:h-24 transform translate-y-1/2">
-            <div className="p-2 rounded-sm shadow-lg">
-              <Image
-                src="/images/sustainability/img.png"
-                alt="Sustainability Logo"
-                width={90}
-                height={90}
-                className="object-contain"
-              />
-            </div>
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.03, 0.1, 0.03] 
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: 1.5
+            }}
+            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
+          />
+        </motion.div>
+
+        <div className="container mx-auto px-4 h-full relative z-10">
+          <div className="flex flex-col justify-center h-full max-w-4xl">
+            {/* Breadcrumb Navigation */}
+            <nav className="mb-6">
+              <motion.ol 
+                className="flex items-center space-x-2 text-sm text-white/80"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
+                <li><span className="text-white/60">/</span></li>
+                <li><span className="text-white">Sustainability</span></li>
+              </motion.ol>
+            </nav>
+
+            {/* Hero Title & Content */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Building a
+              <br />
+              <span className="text-nyati-orange">Sustainable</span> Future
+            </motion.h1>
+
+            <motion.p 
+              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              Our commitment to environmental sustainability drives innovation in cement production, focusing on reducing emissions, conserving energy, and promoting eco-friendly practices.
+            </motion.p>
+
+            {/* Key Metrics */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">30%</div>
+                <div className="text-white text-sm">Reduced CO2 Emissions</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">85%</div>
+                <div className="text-white text-sm">Waste Recovery Rate</div>
+              </div>
+              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">40%</div>
+                <div className="text-white text-sm">Energy Efficiency</div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
+      </section>
 
       <div className="container mx-auto px-4 max-w-7xl py-12">
         {/* Introduction Section - More compact */}
@@ -211,14 +270,14 @@ export default function SustainabilityPage() {
           className="mb-12"
         >
           {/* Centered Policy Header */}
-<motion.div
-  variants={fadeIn}
-  className="text-center mb-4"
->
-  <h2 className="text-2xl font-bold mb-2">
-    <span className="text-nyati-orange">SUSTAINABILITY & ENVIRONMENTAL POLICY</span>
-  </h2>
-</motion.div>
+          <motion.div
+            variants={fadeIn}
+            className="text-center mb-4"
+          >
+            <h2 className="text-2xl font-bold mb-2">
+              <span className="text-nyati-orange">SUSTAINABILITY & ENVIRONMENTAL POLICY</span>
+            </h2>
+          </motion.div>
           
           <div className="grid md:grid-cols-2 gap-6">
             {policyCards.map((card, index) => (
@@ -339,7 +398,8 @@ export default function SustainabilityPage() {
                 Energy Efficient Solutions
               </SectionHeading>
               
-              <div className="bg-white rounded-sm shadow-sm overflow-hidden">                <div className="divide-y divide-gray-100">
+              <div className="bg-white rounded-sm shadow-sm overflow-hidden">                
+                <div className="divide-y divide-gray-100">
                   {energyEfficientSolutions.map((solution, index) => (
                     <motion.div 
                       key={index} 

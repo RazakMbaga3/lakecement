@@ -12,12 +12,15 @@ export default function Hero() {
   
   // Slideshow images
   const slideshowImages = [
-    '/images/slideshow/4.png',
-    '/images/slideshow/5.png',
+    '/images/slideshow/4.jpeg',
+    '/images/slideshow/1.jpeg',
+    '/images/slideshow/3.jpeg',
     '/images/block2.png',
     '/images/block1.jpg',
-    '/images/factory1.png',
-    '/images/factory3.png'
+    '/images/img/nyati298.jpg',
+    '/images/img/nyati1122.jpg',
+    '/images/img/nyati92.jpg',
+    '/images/img/nyati113.jpg'
   ]
 
   // Effect for slideshow autoplay
@@ -170,11 +173,11 @@ export default function Hero() {
             animate="visible"
             className="text-white space-y-8 lg:col-span-7"
           >
-            {/* Semi-transparent backdrop for better text readability */}
-            <div className="backdrop-blur-sm bg-nyati-navy/30 p-6 rounded-xl border border-white/10 shadow-xl">
+            {/* Title with text shadow for better readability */}
+            <div>
               <motion.h1 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl lg:text-6xl leading-tight text-white"
+                className="text-4xl md:text-5xl lg:text-6xl leading-tight text-white [text-shadow:_2px_2px_4px_rgb(0_0_0_/_50%),_0_0_30px_rgb(0_0_0_/_30%)]"
               >
                 <span className="font-light">Innovative Technology,</span>
                 <br/>
@@ -182,14 +185,14 @@ export default function Hero() {
                   initial={{ color: "#fff" }}
                   animate={{ color: "#F79752" }}
                   transition={{ duration: 1.5, delay: 1 }}
-                  className="text-nyati-orange font-bold"
+                  className="text-nyati-orange font-bold [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]"
                 >Trusted Cement for</motion.span>
                 <br/>
                 <span className="font-bold">Strong <motion.span 
                   initial={{ color: "#fff" }}
                   animate={{ color: "#F79752" }}
                   transition={{ duration: 1.5, delay: 1.5 }}
-                  className="text-nyati-orange"
+                  className="text-nyati-orange [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]"
                 >&</motion.span> Durable</span>
                 <br/>
                 <span className="font-bold">Construction</span>
@@ -197,7 +200,7 @@ export default function Hero() {
               
               <motion.div 
                 variants={fadeInUp}
-                className="space-y-4 text-lg text-gray-200 mt-4"
+                className="space-y-4 text-lg text-gray-200 mt-4 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_40%)]"
               >
                 <p>Building the future of Tanzania with premium quality cement products</p>
               </motion.div>

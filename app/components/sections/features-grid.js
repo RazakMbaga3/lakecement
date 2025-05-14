@@ -10,21 +10,21 @@ const features = [
   {
     id: 1,
     title: 'QUALITY CONTROL',
-    image: '/images/index/img2.jpg',
+    image: '/images/img/nyati144.jpg',
     text: 'It is the quality of our products that sets us apart and cements our dominant position in the market. Our stringent quality standards conform to the guidelines prescribed by Tanzania Bureau of Standards (TBS).',
     link: '/quality-control'
   },
   {
     id: 2,
     title: 'DISTRIBUTION & SERVICE',
-    image: '/images/index/img3.jpg',
+    image: '/images/img/driver.png',
     text: 'Our extensive distribution network ensures that our cement is always available to you. In addition to our products, we also provide technical support for structural and general civil engineering needs.',
     link: '/distribution'
   },
   {
     id: 3,
     title: 'SUSTAINABILITY',
-    image: '/images/index/SUST.jpg',
+    image: '/images/img/nyati92.jpg',
     text: 'We are determined towards making the environment cleaner, greener and healthier. For this we have pioneered technologies and processes that reduce emissions, waste and noise.',
     link: '/sustainability'
   }

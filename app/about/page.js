@@ -183,13 +183,13 @@ export default function AboutPage() {
       className="bg-gray-50"
     >
       {/* Compact Banner with Parallax Effect */}
-      <div className="relative h-52 md:h-64 w-auto overflow-hidden" ref={ref}>
+      <div className="relative h-128 md:h-128 w-auto overflow-hidden" ref={ref}>
         <motion.div
           style={{ y, opacity }}
           className="absolute inset-0 w-full h-full"
         >
           <Image 
-            src="/images/aboutus/m.webp" 
+            src="/images/aboutus/group.webp" 
             alt="About-us Banner"
             fill 
             className="object-cover"
