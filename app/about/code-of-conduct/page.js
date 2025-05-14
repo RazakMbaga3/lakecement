@@ -195,7 +195,7 @@ export default function CodeOfConductPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/career7.jpg"
+              src="/images/aboutus/coc.webp"
               alt="Code of Conduct"
               fill
               priority
@@ -273,25 +273,7 @@ export default function CodeOfConductPage() {
               standards of business ethics and professional integrity.
             </motion.p>
 
-            {/* Key Metrics */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-            >              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">100%</div>
-                <div className="text-white text-sm">Compliance</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">0</div>
-                <div className="text-white text-sm">Tolerance for Corruption</div>
-              </div>
-              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">24/7</div>
-                <div className="text-white text-sm">Ethical Support</div>
-              </div>
-            </motion.div>
+            
           </div>
         </div>
       </section>
