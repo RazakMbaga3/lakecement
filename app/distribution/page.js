@@ -196,14 +196,6 @@ export default function DistributionForm() {
                 <div className="text-nyati-orange text-2xl font-bold mb-1">24/7</div>
                 <div className="text-white text-sm">Support</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">100+</div>
-                <div className="text-white text-sm">Distribution Points</div>
-              </div>
-              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">95%</div>
-                <div className="text-white text-sm">On-Time Delivery</div>
-              </div>
             </motion.div>
           </div>
         </div>
