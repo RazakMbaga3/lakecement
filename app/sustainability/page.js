@@ -221,26 +221,7 @@ export default function SustainabilityPage() {
               Our commitment to environmental sustainability drives innovation in cement production, focusing on reducing emissions, conserving energy, and promoting eco-friendly practices.
             </motion.p>
 
-            {/* Key Metrics */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-            >
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">30%</div>
-                <div className="text-white text-sm">Reduced CO2 Emissions</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">85%</div>
-                <div className="text-white text-sm">Waste Recovery Rate</div>
-              </div>
-              <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">40%</div>
-                <div className="text-white text-sm">Energy Efficiency</div>
-              </div>
-            </motion.div>
+
           </div>
         </div>
       </section>
