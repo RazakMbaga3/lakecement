@@ -217,9 +217,9 @@ export default function CertificationsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Quality
+              Quality &
               <br />
-              <span className="text-nyati-orange">Certifications</span>
+              <span className="text-nyati-orange">Statutory Certifications</span>
             </motion.h1>
             <motion.p
               className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
