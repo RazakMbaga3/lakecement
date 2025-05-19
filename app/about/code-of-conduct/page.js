@@ -327,7 +327,7 @@ export default function CodeOfConductPage() {
                   y: -5,
                   boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
                 }}
-                className="bg-nyati-light-orange/10 rounded-sm shadow-sm p-4 flex items-start hover:shadow-md transition-all duration-300"
+                className="bg-nyati-light-orange/ hover:bg-nyati-orange rounded-sm shadow-sm p-4 flex items-start hover:shadow-md transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-sm flex items-center justify-center mr-4 text-nyati-bg-nyati-navy flex-shrink-0">
                   {icons[value.icon]}

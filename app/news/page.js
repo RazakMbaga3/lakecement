@@ -165,7 +165,7 @@ export default function NewsPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/news/RC-Chalamila.png"
+              src="/images/news/crb.jpg"
               alt="Latest News and Updates"
               fill
               priority

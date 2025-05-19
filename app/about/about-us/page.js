@@ -101,7 +101,7 @@ const CoreValueCard = ({ icon, title, description }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="bg-white rounded-sm overflow-hidden shadow-md relative group"
     >
-      <div className={`p-5 transition-all duration-300 ${isHovered ? 'bg-nyati-light-orange bg-opacity-5' : ''}`}>
+      <div className={`p-5 transition-all duration-300 ${isHovered ? 'bg-nyati-orange' : ''}`}>
         <div className="flex mb-3">
           <div className="w-12 h-12 bg-nyati-orange/10 rounded-sm flex items-center justify-center mr-3">
             <span className="text-nyati-orange text-xl">{icon}</span>

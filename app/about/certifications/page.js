@@ -233,7 +233,7 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <main className="py-12">
+      <main className="py-12 max-w-7xl mx-auto">
         <motion.div variants={staggerContainer} className="space-y-6">
           {filteredCertifications.map((section, sectionIndex) => (
             <motion.section 

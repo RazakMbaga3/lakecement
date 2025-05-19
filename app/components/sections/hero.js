@@ -267,9 +267,44 @@ export default function Hero() {
                 >
                   <Link 
                     href="/contact" 
-                    className="inline-flex items-center space-x-2 group bg-nyati-orange text-white px-6 py-3 rounded-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="inline-flex items-center space-x-2 group bg-nyati-orange text-white px-6 hover:bg-nyati-light-grey py-3 rounded-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <span>CONTACT US</span>
+                    <motion.svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-5 w-5" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        repeatDelay: 2
+                      }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </motion.svg>
+                  </Link>
+                </motion.div>
+              </motion.div>
+
+          
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Link 
+                    href="/about/certifications" 
+                    className="inline-flex items-center space-x-2 group bg-nyati-navy hover:bg-white text-white px-6 py-3 rounded-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <span>Tests and Statutory Certifications</span>
                     <motion.svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       className="h-5 w-5" 
@@ -321,7 +356,7 @@ export default function Hero() {
               />
               
               <Image
-                src="/images/ALLNYATIBAGS.webp"
+                src="/images/ALLNYATIBAGS.png"
                 alt="Nyati Cement Product"
                 width={400}
                 height={400}
