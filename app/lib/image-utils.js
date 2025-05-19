@@ -17,42 +17,87 @@ export function getFallbackImage(category) {
 }
 
 /**
- * Normalize image paths to handle case sensitivity
+ * Clean and normalize image path
+ * Handles case sensitivity and multiple formats
  */
 export function normalizeImagePath(path) {
   if (!path) return ''
-  
-  // Try different case combinations for image extensions
+
+  // Remove any double slashes
+  path = path.replace(/\/+/g, '/')
+
+  // Always ensure path starts with a single /
+  if (!path.startsWith('/')) {
+    path = '/' + path
+  }
+
+  // Get the base path without extension
   const basePath = path.substring(0, path.lastIndexOf('.'))
-  const extensions = ['.jpg', '.JPG', '.png', '.PNG', '.webp', '.WEBP']
-  return path.replace(/\.[^/.]+$/, (ext) => {
-    // Keep the original extension as first choice
-    return [ext, ...extensions.filter(e => e.toLowerCase() !== ext.toLowerCase())]
-      .find(e => {
-        try {
-          require(`public${basePath}${e}`)
-          return true
-        } catch {
-          return false
-        }
-      }) || ext
-  })
+  
+  // Define possible extensions in order of preference
+  const extensions = [
+    '.webp', '.WEBP',
+    '.jpg', '.JPG', '.jpeg', '.JPEG',
+    '.png', '.PNG'
+  ]
+
+  // For Vercel deployment, we'll just try the exact path first,
+  // then try normalized lowercase version
+  return {
+    srcSet: [
+      path, // Original path first
+      basePath.toLowerCase() + path.substring(path.lastIndexOf('.')).toLowerCase(), // Lowercase version
+      ...extensions.map(ext => basePath + ext) // Try all extensions
+    ],
+    fallback: getFallbackImage(null)
+  }
 }
 
 /**
- * Create placeholder content for failed images
+ * NextJS Image component loader for optimizing image loading
  */
-export function getImagePlaceholder(title, type = 'default') {
-  const icons = {
-    company: '🏢',
-    csr: '🤝',
-    product: '📦',
-    default: '📷'
+export function customLoader({ src, width, quality }) {
+  // Handle both local and external URLs
+  if (src.startsWith('http')) {
+    return src
   }
-  return {
-    overlay: <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-90">
-      <span className="text-4xl">{icons[type] || icons.default}</span>
-    </div>,
-    altText: `Image unavailable - ${title || 'Placeholder'}`
+  // For local images, ensure proper path handling
+  return src.startsWith('/') ? src : `/${src}`
+}
+
+/**
+ * Create responsive image sizes config
+ */
+export function getImageSizes(type = 'default') {
+  const sizes = {
+    default: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+    hero: '100vw',
+    gallery: '(max-width: 768px) 100vw, 50vw',
   }
+  return sizes[type] || sizes.default
+}
+
+/**
+ * Get placeholder image based on context
+ */
+export function getImagePlaceholder(type = 'default') {
+  const placeholders = {
+    company: {
+      icon: '🏢',
+      bgColor: 'bg-nyati-navy'
+    },
+    csr: {
+      icon: '🤝',
+      bgColor: 'bg-nyati-green'
+    },
+    product: {
+      icon: '📦',
+      bgColor: 'bg-nyati-orange'
+    },
+    default: {
+      icon: '📷',
+      bgColor: 'bg-gray-200'
+    }
+  }
+  return placeholders[type] || placeholders.default
 }

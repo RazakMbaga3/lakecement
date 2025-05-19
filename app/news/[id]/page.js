@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Newsletter from '@/app/components/ui/Newsletter'
 import ShareButtons from '@/app/components/ui/ShareButtons'
 import RelatedNews from '../components/RelatedNews'
+import NewsImage from '@/app/components/ui/NewsImage'
 import { normalizeImagePath, getFallbackImage, getImagePlaceholder } from '@/app/lib/image-utils'
 
 export default function NewsArticlePage({ params }) {
