@@ -313,14 +313,13 @@ export default function NewsArticlePage({ params }) {
           conclusion: "The handover of the Geza Bus Terminal by Nyati Cement exemplifies how public-private partnerships can effectively contribute to community infrastructure development. As representatives from the Land Transport Regulatory Authority (LATRA) begin issuing permits for the new terminal, this facility is expected to significantly improve public transportation in Kigamboni while creating new economic opportunities for local residents and businesses in the area."
         },
         date: "2022-11-08",
-        author: "Corporate Affairs Department",      mainImage: "/images/news/bs4.jpg",
+        author: "Corporate Affairs Department",      mainImage: "/images/news/bs8.png",
       gallery: [
-        "/images/news/bs3.jpg",
-        "/images/news/bs2.jpg",
-        "/images/news/bs5.jpg",
-        "/images/news/bs1.jpg",
+        "/images/news/bs3.webp",
+        "/images/news/bs2.webp",
+        "/images/news/bs1.webp",
         "/images/news/bs8.png",
-        "/images/news/bs4.jpg"
+        "/images/news/bs4.webp"
       ],
         category: "csr",
         featured: true,
