@@ -108,7 +108,7 @@ export default function ProductsSlider() {
             >
               <Link 
                 href="/products" 
-                className="bg-nyati-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-300 inline-flex items-center uppercase tracking-wider text-sm md:text-base"
+                className="bg-nyati-orange hover:bg-nyati-navy text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-300 inline-flex items-center uppercase tracking-wider text-sm md:text-base"
               >
                 <span>Explore</span>
                 <svg 
