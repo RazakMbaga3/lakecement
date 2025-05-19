@@ -7,13 +7,16 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Newsletter from '@/app/components/ui/Newsletter'
 import ShareButtons from '@/app/components/ui/ShareButtons'
 import RelatedNews from '../components/RelatedNews'
+import { normalizeImagePath, getFallbackImage, getImagePlaceholder } from '@/app/lib/image-utils'
 
 export default function NewsArticlePage({ params }) {
   // Get article ID from route parameters
   const articleId = parseInt(params.id)
   
-  // State for reading time
+  // State for reading time and image loading errors
   const [readingTime, setReadingTime] = useState('3 min')
+  const [mainImageError, setMainImageError] = useState(false)
+  const [galleryErrors, setGalleryErrors] = useState({})
   
   // Ref for scroll animations
   const contentRef = useRef(null)
@@ -25,6 +28,7 @@ export default function NewsArticlePage({ params }) {
   // Parallax and animation effects
   const y = useTransform(scrollYProgress, [0, 1], [0, -50])
   const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0.6, 1, 1])
+  // Image error states are managed by useState above
 
   // Animation variants
   const containerVariants = {
@@ -309,17 +313,15 @@ export default function NewsArticlePage({ params }) {
           conclusion: "The handover of the Geza Bus Terminal by Nyati Cement exemplifies how public-private partnerships can effectively contribute to community infrastructure development. As representatives from the Land Transport Regulatory Authority (LATRA) begin issuing permits for the new terminal, this facility is expected to significantly improve public transportation in Kigamboni while creating new economic opportunities for local residents and businesses in the area."
         },
         date: "2022-11-08",
-        author: "Corporate Affairs Department",
-        mainImage: "/images/news/bs4.jpg",
-        gallery: [
-          "/images/news/bs3.jpg",
-          "/images/news/bs2.jpg",
-          "/images/news/bs5.jpg",
-          "/images/news/bs1.jpg",
-          "/images/news/bs8.png",
-          "/images/news/bs4.jpg"
-
-        ],
+        author: "Corporate Affairs Department",      mainImage: "/images/news/bs4.jpg",
+      gallery: [
+        "/images/news/bs3.jpg",
+        "/images/news/bs2.jpg",
+        "/images/news/bs5.jpg",
+        "/images/news/bs1.jpg",
+        "/images/news/bs8.png",
+        "/images/news/bs4.jpg"
+      ],
         category: "csr",
         featured: true,
         tag: "Community Development",
@@ -375,11 +377,12 @@ export default function NewsArticlePage({ params }) {
           <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/90 to-nyati-navy/70 opacity-80 z-10"></div>
           <div className="absolute inset-0 z-0">
             <Image 
-              src={article.mainImage}
+              src={mainImageError ? getFallbackImage(article.category) : normalizeImagePath(article.mainImage)}
               alt={article.title}
               fill
               priority
               className="object-cover"
+              onError={() => setMainImageError(true)}
             />
           </div>
           
@@ -489,11 +492,17 @@ export default function NewsArticlePage({ params }) {
                   {article.gallery.map((image, index) => (
                     <div key={index} className="relative aspect-video rounded-sm overflow-hidden shadow-soft">
                       <Image
-                        src={image}
+                        src={galleryErrors[index] ? getFallbackImage(article.category) : normalizeImagePath(image)}
                         alt={`${article.title} - Image ${index + 1}`}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"
+                        onError={() => setGalleryErrors(prev => ({ ...prev, [index]: true }))}
                       />
+                      {galleryErrors[index] && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-90">
+                          <span className="text-gray-500 text-sm">Image unavailable</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

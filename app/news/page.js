@@ -130,7 +130,7 @@ export default function NewsPage() {
       title: "Nyati Cement Hands Over Kigamboni Bus Terminal, Citizens Urged to Embrace Opportunities",
       excerpt: "Nyati Cement has officially handed over the newly constructed Kigamboni Bus Terminal to the District Commissioner. The company invested 46 million shillings in this infrastructure project, demonstrating its commitment to supporting President Samia Suluhu Hassan's efforts to bring essential services closer to citizens.",
       date: "2022-11-08",
-      image: "/images/news/bs3.jpg",
+      image: "/images/news/bs3.JPG",
       category: "csr",
       featured: true,
       tag: "Community Development",
@@ -174,7 +174,7 @@ export default function NewsPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/news/crb.jpg"
+              src="/images/news/crb.JPG"
               alt="Latest News and Updates"
               fill
               priority

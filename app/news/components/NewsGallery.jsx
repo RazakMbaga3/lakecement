@@ -3,9 +3,15 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { normalizeImagePath, getFallbackImage, getImagePlaceholder } from '@/app/lib/image-utils'
 
 export default function NewsGallery({ items }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null)
+  const [imageErrors, setImageErrors] = useState({})
+  
+  const handleImageError = (index) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }))
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -17,11 +23,13 @@ export default function NewsGallery({ items }) {
         >
           <div className="relative h-64 w-full">
             <Image 
-              src={item.image} 
-              alt={item.alt} 
+              src={imageErrors[index] ? getFallbackImage(item.category) : normalizeImagePath(item.image)}
+              alt={imageErrors[index] ? getImagePlaceholder(item.alt).altText : item.alt}
               fill
               className="object-cover"
+              onError={() => handleImageError(index)}
             />
+            {imageErrors[index] && getImagePlaceholder(item.title, item.category).overlay}
           </div>
           
           <div className={`absolute inset-0 bg-nyati-orange/60 flex items-center justify-center transition-opacity duration-300 ${activeIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-80'}`}>
