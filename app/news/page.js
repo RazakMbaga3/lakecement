@@ -62,8 +62,8 @@ export default function NewsPage() {
   const newsArticles = [
     {
       id: 8,
-      title: "Nyati Cement Engages Industry Stakeholders at the 2025 Annual Consultative Meeting for Contractors (ACM) & Exhibition",
-      excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, showcased its commitment to industry excellence at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 165 stakeholders and highlighting opportunities for sector growth.",
+      title: "Nyati Cement Engagement at the 2025 Annual Consultative Meeting for Contractors (ACM) organized by the CRB",
+      excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, participated at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 500 stakeholders and highlighting opportunities for sector growth.",
       date: "2025-05-16",
       image: "/images/news/acm/1.jpg",
       category: "company",
@@ -171,8 +171,7 @@ export default function NewsPage() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Background Image */}
-          <div className="absolute inset-0">
+          {/* Background Image */}            <div className="absolute inset-0">
             <Image 
               src="/images/news/crb.jpg"
               alt="Latest News and Updates"
@@ -180,21 +179,34 @@ export default function NewsPage() {
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy via-nyati-navy/80 to-nyati-navy/60 opacity-90 z-10"></div>
           </div>
 
           {/* Animated Decorative Elements */}
           <motion.div 
+            className="absolute top-1/3 right-10 w-64 h-64 bg-nyati-orange/10 rounded-sm blur-xl"
             animate={{ 
               scale: [1, 1.1, 1],
-              opacity: [0.05, 0.15, 0.05] 
+              x: [0, 10, 0],
             }}
             transition={{ 
-              duration: 8, 
-              repeat: Infinity, 
+              duration: 6,
+              repeat: Infinity,
               repeatType: "reverse" 
             }}
-            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
+          />
+          
+          <motion.div 
+            className="absolute bottom-0 left-1/4 w-40 h-40 bg-nyati-green/10 rounded-sm blur-xl"
+            animate={{ 
+              scale: [1, 1.15, 1],
+              y: [0, -10, 0],
+            }}
+            transition={{ 
+              duration: 5,
+              repeat: Infinity,
+              repeatType: "reverse" 
+            }}
           />
           
           <motion.div 

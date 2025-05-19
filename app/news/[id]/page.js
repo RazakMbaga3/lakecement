@@ -209,9 +209,9 @@ export default function NewsArticlePage({ params }) {
         },
         date: "2017-05-17",
         author: "CSR Department",
-        mainImage: "/images/news/damu4.jpg",
+        mainImage: "/images/news/damu4.webp",
         gallery: [  
-        "/images/news/damu4.jpg",
+        "/images/news/damu4.webp",
         "/images/news/damu2.jpg",
         "/images/news/damu1.jpg",
         "/images/news/damu3.jpg"
@@ -253,24 +253,21 @@ export default function NewsArticlePage({ params }) {
       relatedArticles: [1, 2, 4]
     },    {
         id: 8,
-        title: "Nyati Cement Engages Industry Stakeholders at the 2025 Annual Consultative Meeting for Contractors (ACM) & Exhibition",
-        excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, showcased its commitment to industry excellence at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 165 stakeholders and highlighting opportunities for sector growth.",
+        title: "Nyati Cement Engages with contractors at the 2025 ACM organized Contractors Registration Board",
+        excerpt: "",
         fullContent: {
-          intro: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, actively participated in the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition held on May 15–16 in Dar es Salaam. This pivotal event convened over 165 contractors, engineers, government officials, and suppliers to discuss advancements and challenges within Tanzania's construction sector.",
+          intro: "",
           paragraphs: [
             "The ACM & Exhibition served as a strategic platform for Nyati Cement to showcase our commitment to quality and innovation in cement manufacturing. The event facilitated direct engagement with contractors and stakeholders, enabling us to better understand their needs while gathering valuable insights into market trends and regional distribution challenges.",
-            "During the exhibition, Nyati Cement's technical team conducted live demonstrations of our premium cement products, highlighting their superior performance characteristics and versatility in various construction applications. Industry professionals were particularly interested in our specialized cement formulations designed for large-scale infrastructure projects.",
-            "Our representatives participated in key panel discussions focusing on sustainable construction practices and the role of local manufacturers in supporting Tanzania's infrastructure development goals. These sessions provided valuable opportunities to share our expertise and learn from other industry leaders about emerging construction technologies and methodologies."
+            "During the exhibition, the footfall at Nyati Cement's booth was noticiable due to very informative and engaging booth activities",
           ],
           quote: {
-            text: "The construction sector is evolving rapidly, and events like the ACM are vital for fostering collaboration and knowledge sharing. We're proud to contribute to the industry's growth while maintaining our commitment to quality and sustainability.",
-            author: "Lake Cement Technical Director"
+            text: "",
+            author: ""
           },
           additionalContent: [
-            "The exhibition portion of the event showcased Nyati Cement's complete product range, with particular emphasis on our high-strength portland cement and specialized blends. Visitors to our booth received detailed technical information and had the opportunity to consult with our engineers about specific project requirements.",
-            "Interactive workshops conducted during the event covered topics such as cement selection criteria, quality control measures, and best practices in concrete mixing and application. These sessions were well-received by contractors and helped strengthen Nyati Cement's position as a knowledge leader in the industry."
           ],
-          conclusion: "The 2025 ACM & Exhibition has reinforced Nyati Cement's commitment to supporting Tanzania's construction industry through quality products and responsive service. The insights gained from this event will guide our strategies as we work to address the industry's evolving needs and expand our presence across the country."
+         
         },
         date: "2025-05-16",
         author: "Corporate Communications",
@@ -279,6 +276,9 @@ export default function NewsArticlePage({ params }) {
           "/images/news/acm/2.jpg",
           "/images/news/acm/3.jpg",
           "/images/news/acm/5.jpg",
+          "/images/news/acm/7.jpg",
+          "/images/news/acm/8.jpg",
+          "/images/news/acm/9.jpg",
           "/images/news/acm/6.jpg"
         ],
         category: "company",
@@ -370,9 +370,7 @@ export default function NewsArticlePage({ params }) {
         <motion.div 
           className="absolute inset-0 w-full h-full"
           style={{ y, opacity }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/90 to-nyati-navy/70 opacity-80 z-10"></div>
-          <div className="absolute inset-0 z-0">
+        >          <div className="absolute inset-0 z-0">
             <Image 
               src={article.mainImage}
               alt={article.title}
@@ -380,6 +378,7 @@ export default function NewsArticlePage({ params }) {
               priority
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent z-10"></div>
           </div>
           
           {/* Decorative Elements */}

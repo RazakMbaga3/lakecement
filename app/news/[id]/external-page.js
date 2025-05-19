@@ -155,17 +155,15 @@ export default function ExternalNewsArticlePage({ params }) {
 
   return (
     <div ref={contentRef} className="min-h-screen bg-gray-50">
-      {/* Hero section */}
-      <section className="relative h-72 md:h-96 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/90 to-nyati-navy/70 opacity-80 z-10"></div>
+      {/* Hero section */}      <section className="relative h-72 md:h-96 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src={article.image}
             alt={article.title}
-            fill
-            priority
+            fill            priority
             className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent z-10"></div>
         </div>
         
         {/* Content overlay */}

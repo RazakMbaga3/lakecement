@@ -121,13 +121,13 @@ export default function ProductNewsPage() {
         <motion.div 
           className="absolute inset-0 w-full h-full"
           style={{ y, opacity }}
-        >
-          <div className="absolute inset-0 bg-nyati-orange opacity-90 z-10"></div>
-          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center z-0"></div>
+        >          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center z-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-nyati-orange/95 via-nyati-orange/40 to-transparent z-10"></div>
+          </div>
           
           {/* Decorative Elements */}
           <motion.div 
-            className="absolute top-1/3 right-10 w-64 h-64 bg-nyati-navy/10 rounded-full blur-xl"
+            className="absolute top-1/3 right-10 w-64 h-64 bg-nyati-navy/10 rounded-sm blur-xl"
             animate={{ 
               scale: [1, 1.1, 1],
               x: [0, 10, 0],
