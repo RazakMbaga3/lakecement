@@ -112,7 +112,7 @@ export default function NewsPage() {
       title: "Lake Cement Leads Blood Donation Drive to Save Lives",
       excerpt: "Lake Cement has demonstrated corporate social responsibility through an impactful blood donation drive at our factory. The initiative aims to address the critical shortage of blood supplies in Tanzania's healthcare system and highlights our dedication to community health and wellbeing.",
       date: "2017-05-17",
-      image: "/images/news/damu4.jpg",
+      image: "/images/news/damu4.webp",
       category: "csr",
       link: "https://www.michuzi.co.tz/2017/05/lake-cement-yachangia-damu-katika.html"
     },

@@ -214,9 +214,9 @@ export default function NewsArticlePage({ params }) {
         },
         date: "2017-05-17",
         author: "CSR Department",
-        mainImage: "/images/news/damu4.jpg",
+        mainImage: "/images/news/damu4.webp",
         gallery: [  
-        "/images/news/damu4.jpg",
+        "/images/news/damu4.webp",
         "/images/news/damu2.jpg",
         "/images/news/damu1.jpg",
         "/images/news/damu3.jpg"
