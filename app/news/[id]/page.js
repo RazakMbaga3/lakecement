@@ -253,13 +253,13 @@ export default function NewsArticlePage({ params }) {
       relatedArticles: [1, 2, 4]
     },    {
         id: 8,
-        title: "Nyati Cement Engages with contractors at the 2025 ACM organized Contractors Registration Board",
+        title: "Nyati Cement Engages with contractors at the 2025 ACM organized by Contractors Registration Board",
         excerpt: "",
         fullContent: {
           intro: "",
           paragraphs: [
             "The ACM & Exhibition served as a strategic platform for Nyati Cement to showcase our commitment to quality and innovation in cement manufacturing. The event facilitated direct engagement with contractors and stakeholders, enabling us to better understand their needs while gathering valuable insights into market trends and regional distribution challenges.",
-            "During the exhibition, the footfall at Nyati Cement's booth was noticiable due to very informative and engaging booth activities",
+            "During the exhibition, footfall at Nyati Cement booth was noticiable due to very informative and engaging booth activities.",
           ],
           quote: {
             text: "",
