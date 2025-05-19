@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Newsletter from '@/app/components/ui/Newsletter'
+import ShareButtons from '@/app/components/ui/ShareButtons'
 import RelatedNews from '../components/RelatedNews'
 
 export default function NewsArticlePage({ params }) {
@@ -179,10 +180,7 @@ export default function NewsArticlePage({ params }) {
             author: "",
             mainImage: "/images/news/env.webp",
             gallery: [
-              "/images/news/env.webp",
-              "/images/aboutus/new/z.png",
-              "/images/aboutus/new/x.png",
-              "/images/aboutus/new/y.png"
+              "/images/news/env.webp"
             ],
             category: "company",
             relatedArticles: [6, 1, 3]
@@ -253,6 +251,40 @@ export default function NewsArticlePage({ params }) {
       category: "company",
       externalLink: "https://www.thecitizen.co.tz/tanzania/business/majaliwa-assures-investors-of-government-cooperation-2596696",
       relatedArticles: [1, 2, 4]
+    },    {
+        id: 8,
+        title: "Nyati Cement Engages Industry Stakeholders at the 2025 Annual Consultative Meeting for Contractors (ACM) & Exhibition",
+        excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, showcased its commitment to industry excellence at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 165 stakeholders and highlighting opportunities for sector growth.",
+        fullContent: {
+          intro: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, actively participated in the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition held on May 15–16 in Dar es Salaam. This pivotal event convened over 165 contractors, engineers, government officials, and suppliers to discuss advancements and challenges within Tanzania's construction sector.",
+          paragraphs: [
+            "The ACM & Exhibition served as a strategic platform for Nyati Cement to showcase our commitment to quality and innovation in cement manufacturing. The event facilitated direct engagement with contractors and stakeholders, enabling us to better understand their needs while gathering valuable insights into market trends and regional distribution challenges.",
+            "During the exhibition, Nyati Cement's technical team conducted live demonstrations of our premium cement products, highlighting their superior performance characteristics and versatility in various construction applications. Industry professionals were particularly interested in our specialized cement formulations designed for large-scale infrastructure projects.",
+            "Our representatives participated in key panel discussions focusing on sustainable construction practices and the role of local manufacturers in supporting Tanzania's infrastructure development goals. These sessions provided valuable opportunities to share our expertise and learn from other industry leaders about emerging construction technologies and methodologies."
+          ],
+          quote: {
+            text: "The construction sector is evolving rapidly, and events like the ACM are vital for fostering collaboration and knowledge sharing. We're proud to contribute to the industry's growth while maintaining our commitment to quality and sustainability.",
+            author: "Lake Cement Technical Director"
+          },
+          additionalContent: [
+            "The exhibition portion of the event showcased Nyati Cement's complete product range, with particular emphasis on our high-strength portland cement and specialized blends. Visitors to our booth received detailed technical information and had the opportunity to consult with our engineers about specific project requirements.",
+            "Interactive workshops conducted during the event covered topics such as cement selection criteria, quality control measures, and best practices in concrete mixing and application. These sessions were well-received by contractors and helped strengthen Nyati Cement's position as a knowledge leader in the industry."
+          ],
+          conclusion: "The 2025 ACM & Exhibition has reinforced Nyati Cement's commitment to supporting Tanzania's construction industry through quality products and responsive service. The insights gained from this event will guide our strategies as we work to address the industry's evolving needs and expand our presence across the country."
+        },
+        date: "2025-05-16",
+        author: "Corporate Communications",
+        mainImage: "/images/news/acm/1.jpg",
+        gallery: [
+          "/images/news/acm/2.jpg",
+          "/images/news/acm/3.jpg",
+          "/images/news/acm/5.jpg",
+          "/images/news/acm/6.jpg"
+        ],
+        category: "company",
+        featured: true,
+        tag: "Industry Event",
+        relatedArticles: [1, 2, 6]
     },
     {
         id: 7,
@@ -335,7 +367,7 @@ export default function NewsArticlePage({ params }) {
   return (
     <div ref={contentRef} className="min-h-screen bg-gray-50">
       {/* Hero section with parallax effect */}
-      <section className="relative h-80 md:h-96 lg:h-128 overflow-hidden">
+      <section className="relative h-[70vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
         <motion.div 
           className="absolute inset-0 w-full h-full"
           style={{ y, opacity }}
@@ -381,15 +413,16 @@ export default function NewsArticlePage({ params }) {
         
         {/* Content overlay */}
         <div className="absolute inset-0 flex items-center z-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 md:px-6">
             <motion.div 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               className="max-w-4xl"
             >
-              <div className="flex items-center space-x-3 mb-6">
-                <span className={`text-white text-xs px-3 py-1 rounded-sm uppercase font-semibold tracking-wide ${
+              {/* Metadata Section */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6">
+                <span className={`inline-block text-white text-xs px-3 py-1 rounded-sm uppercase font-semibold tracking-wide ${
                   article.category === 'company' ? 'bg-nyati-navy' :
                   article.category === 'csr' ? 'bg-nyati-green' :
                   'bg-nyati-orange'
@@ -398,10 +431,10 @@ export default function NewsArticlePage({ params }) {
                    article.category === 'csr' ? 'CSR' :
                    'Product'}
                 </span>
-                <span className="text-white/80 text-sm">
+                <span className="text-white/80 text-xs sm:text-sm">
                   {formatDate(article.date)}
                 </span>
-                <span className="text-white/80 text-sm flex items-center">
+                <span className="text-white/80 text-xs sm:text-sm flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -409,11 +442,12 @@ export default function NewsArticlePage({ params }) {
                 </span>
               </div>
 
-              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-futura">
+              {/* Title Section */}
+              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-futura leading-tight">
                 {article.title}
               </h1>
-              <div className="h-1 w-32 bg-nyati-orange mb-4"></div>
-              <p className="text-white/90 text-base md:text-lg max-w-3xl">
+              <div className="h-1 w-24 md:w-32 bg-nyati-orange mb-4"></div>
+              <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed">
                 {article.fullContent.intro}
               </p>
             </motion.div>
@@ -505,34 +539,7 @@ export default function NewsArticlePage({ params }) {
               <motion.div 
                 variants={itemVariants}
                 className="mt-12 pt-8 border-t border-gray-200"
-              >
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                  <div className="mb-4 sm:mb-0">
-                    <p className="text-sm text-gray-500">Share this article</p>
-                    <div className="flex space-x-4 mt-2">
-                      <button className="text-nyati-navy hover:text-nyati-orange transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                        </svg>
-                      </button>
-                      <button className="text-nyati-navy hover:text-nyati-orange transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                        </svg>
-                      </button>
-                      <button className="text-nyati-navy hover:text-nyati-orange transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                      </button>
-                      <button className="text-nyati-navy hover:text-nyati-orange transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              >                <ShareButtons title={article.title} />
               </motion.div>
           
             </motion.div>

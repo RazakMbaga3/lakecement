@@ -58,9 +58,18 @@ export default function NewsPage() {
       transition: { type: 'spring', stiffness: 300, damping: 25 }
     }
   }
-
   // Mock data for the news (would be replaced with actual data in production)
   const newsArticles = [
+    {
+      id: 8,
+      title: "Nyati Cement Engages Industry Stakeholders at the 2025 Annual Consultative Meeting for Contractors (ACM) & Exhibition",
+      excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, showcased its commitment to industry excellence at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 165 stakeholders and highlighting opportunities for sector growth.",
+      date: "2025-05-16",
+      image: "/images/news/acm/1.jpg",
+      category: "company",
+      featured: true,
+      tag: "Industry Event"
+    },
     {
       id: 1,
       title: "Dar es Salaam Regional Commissioner Visits Lake Cement on Workers' Day",

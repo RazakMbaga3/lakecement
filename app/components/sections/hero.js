@@ -12,13 +12,12 @@ export default function Hero() {
   
   // Slideshow images
   const slideshowImages = [
-    '/images/slideshow/4.jpeg',
     '/images/slideshow/1.jpeg',
+    '/images/slideshow/4.jpeg',
     '/images/slideshow/3.jpeg',
     '/images/block2.png',
     '/images/block1.jpg',
     '/images/img/nyati298.jpg',
-    '/images/img/nyati1122.jpg',
     '/images/img/nyati92.jpg',
     '/images/img/nyati113.jpg'
   ]

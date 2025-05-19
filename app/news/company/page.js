@@ -52,9 +52,18 @@ export default function ProductNewsPage() {
       transition: { type: 'spring', stiffness: 300, damping: 25 }
     }
   }
-
-  // Mock data for product news (sample data since none was in the original)
-  const productNewsArticles = [
+  // Mock data for company news
+  const companyNewsArticles = [
+    {
+      id: 8,
+      title: "Nyati Cement Engages Industry Stakeholders at the 2025 Annual Consultative Meeting for Contractors (ACM) & Exhibition",
+      excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, showcased its commitment to industry excellence at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 165 stakeholders and highlighting opportunities for sector growth.",
+      date: "2025-05-16",
+      image: "/images/news/acm1.jpg",
+      category: "company",
+      featured: true,
+      tag: "Industry Event"
+    },
     {
       id: 9,
       title: "Introducing Nyati Plus+: Our New Premium Cement Formula",
@@ -91,9 +100,8 @@ export default function ProductNewsPage() {
       category: "product"
     }
   ];
-
   // Sort articles by date (newest first)
-  const sortedArticles = [...productNewsArticles].sort((a, b) => 
+  const sortedArticles = [...companyNewsArticles].sort((a, b) => 
     new Date(b.date) - new Date(a.date)
   );
 
