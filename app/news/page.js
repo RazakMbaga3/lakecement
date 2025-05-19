@@ -112,7 +112,7 @@ export default function NewsPage() {
       title: "Lake Cement Leads Blood Donation Drive to Save Lives",
       excerpt: "Lake Cement has demonstrated corporate social responsibility through an impactful blood donation drive at our factory. The initiative aims to address the critical shortage of blood supplies in Tanzania's healthcare system and highlights our dedication to community health and wellbeing.",
       date: "2017-05-17",
-      image: "/images/news/damu4.webp",
+      image: "/images/news/damu4.jpg",
       category: "csr",
       link: "https://www.michuzi.co.tz/2017/05/lake-cement-yachangia-damu-katika.html"
     },
@@ -130,7 +130,7 @@ export default function NewsPage() {
       title: "Nyati Cement Hands Over Kigamboni Bus Terminal, Citizens Urged to Embrace Opportunities",
       excerpt: "Nyati Cement has officially handed over the newly constructed Kigamboni Bus Terminal to the District Commissioner. The company invested 46 million shillings in this infrastructure project, demonstrating its commitment to supporting President Samia Suluhu Hassan's efforts to bring essential services closer to citizens.",
       date: "2022-11-08",
-      image: "/images/news/bs3.JPG",
+      image: "/images/news/bs3.webp",
       category: "csr",
       featured: true,
       tag: "Community Development",
@@ -174,7 +174,7 @@ export default function NewsPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/news/crb.JPG"
+              src="/images/news/crb.jpg"
               alt="Latest News and Updates"
               fill
               priority
