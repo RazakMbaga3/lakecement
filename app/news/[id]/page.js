@@ -212,9 +212,9 @@ export default function NewsArticlePage({ params }) {
         mainImage: "/images/news/damu4.webp",
         gallery: [  
         "/images/news/damu4.webp",
-        "/images/news/damu2.jpg",
-        "/images/news/damu1.jpg",
-        "/images/news/damu3.jpg"
+        "/images/news/damu2.webp",
+        "/images/news/damu1.webp",
+        "/images/news/damu3.webp"
         ],
         category: "csr",
         externalLink: "https://www.michuzi.co.tz/2017/05/lake-cement-yachangia-damu-katika.html",
