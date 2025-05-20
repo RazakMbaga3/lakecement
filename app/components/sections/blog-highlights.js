@@ -19,7 +19,7 @@ const featuredPosts = [
     id: 'Monsoon Construction',
     title: 'Monsoon Construction Guide: Building with Cement During Rainy Seasons',
     excerpt: 'Essential tips for ensuring quality construction during Tanzania\'s rainy seasons.',
-    image: '/images/blog/Monsoon-construction.webp',
+    image: '/images/blog/monsoon.webp',
     date: 'April 04, 2025',
     category: 'Construction Best Practices',
     slug: '/blog/monsoon-construction',

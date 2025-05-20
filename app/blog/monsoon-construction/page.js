@@ -45,7 +45,7 @@ export default function MonsoonConstructionPage() {
 
       <div className="my-8 rounded-sm overflow-hidden relative aspect-w-16 aspect-h-9">
         <Image
-          src="/images/blog/Monsoon-construction.webp"
+          src="/images/blog/monsoon.webp"
           alt="Construction site during rainy season with proper protection measures"
           width={1200}
           height={675}
