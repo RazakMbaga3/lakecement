@@ -180,9 +180,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Ponding image]</span>
-                  </div>
+                  <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/Water-ponding.jpeg" 
+                                       alt="Ponding method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -196,9 +202,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Spraying image]</span>
-                  </div>
+                 <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/Curing-Sprinkler.jpg" 
+                                       alt="Spraying/Sprinkling method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -212,9 +224,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Wet burlap image]</span>
-                  </div>
+                 <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/hessian-for-curing.jpg" 
+                                       alt="Wet Coverings method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -237,9 +255,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Curing compound image]</span>
-                  </div>
+                  <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/curing-compounds.jpg" 
+                                       alt="Curing Compounds method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -253,9 +277,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Plastic sheet image]</span>
-                  </div>
+                   <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/Polythene-sheet-curing.jpg" 
+                                       alt="Plastic Sheeting method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -269,9 +299,15 @@ export default function ConcreteCuringPage() {
             <div className="grid grid-cols-3 gap-3">
               <div className="col-span-1">
                 <div className="aspect-w-1 aspect-h-1 bg-gray-100 rounded-md">
-                  <div className="flex items-center justify-center">
-                    <span className="text-xs text-nyati-grey">[Insulating blanket image]</span>
-                  </div>
+                  <div className="relative h-36 w-full rounded-sm overflow-hidden">
+                                     <Image 
+                                       src="/images/blog/Blankets.jpg" 
+                                       alt="Insulating Blankets method of curing concrete" 
+                                       fill 
+                                       className="object-cover"
+                                       priority
+                                     />
+                </div>
                 </div>
               </div>
               <div className="col-span-2">
@@ -572,7 +608,7 @@ export default function ConcreteCuringPage() {
         <div className="flex justify-center mt-4">
           <Link 
             href="/contact" 
-            className="bg-nyati-orange hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
+            className="bg-nyati-orange hover:bg-nyati-navy text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
           >
             Contact Our Technical Team
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

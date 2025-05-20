@@ -39,20 +39,18 @@ export default function MonsoonConstructionPage() {
       readTime="9 min read"
       relatedPosts={relatedPosts}
     >
+      <div className="relative h-96 w-full mb-8 rounded-sm overflow-hidden">
+              <Image 
+                src="/images/blog/monsoon.webp" 
+                alt="Construction site during rainy season with proper protection measures" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </div>
       <p className="lead text-xl mb-6">
         Tanzania's rainy seasons present unique challenges for construction projects. Excess moisture can significantly impact cement setting, strength development, and overall structural integrity. However, with proper planning and technique, quality construction is absolutely possible during the monsoon. This comprehensive guide provides essential strategies for successfully building with cement during rainy conditions.
       </p>
-
-      <div className="my-8 rounded-sm overflow-hidden relative aspect-w-16 aspect-h-9">
-        <Image
-          src="/images/blog/monsoon.webp"
-          alt="Construction site during rainy season with proper protection measures"
-          width={1200}
-          height={675}
-          className="object-cover rounded-sm"
-        />
-      </div>
-
       <h2 className="text-2xl font-bold text-nyati-navy mt-8 mb-4">Understanding Tanzania's Rainy Seasons</h2>
       <p>
         Tanzania experiences two distinct rainy seasons: the long rains (Masika) from March to May and the short rains (Vuli) from October to December. During these periods, construction activities face several challenges:
@@ -594,7 +592,7 @@ export default function MonsoonConstructionPage() {
         <div className="flex justify-center mt-4">
           <Link 
             href="/contact" 
-            className="bg-nyati-orange hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
+            className="bg-nyati-orange hover:bg-nyati-navy text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
           >
             Contact Our Technical Team
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

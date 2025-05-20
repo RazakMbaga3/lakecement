@@ -386,7 +386,7 @@ const HomeBuilderSection = () => {
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/contact" 
-                  className="bg-nyati-orange hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-medium transition-colors"
+                  className="bg-nyati-orange hover:bg-nyati-navy text-white py-3 px-6 rounded-lg font-medium transition-colors"
                 >
                   Contact Our Experts
                 </Link>

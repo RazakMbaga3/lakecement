@@ -153,7 +153,7 @@ export default function VideoSection() {
                         href={mainVideo.url} 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-20 h-20 rounded-sm bg-nyati-orange/90 flex items-center justify-center transform transition-transform duration-500"
+                        className="w-20 h-20 rounded-full bg-nyati-orange/90 flex items-center justify-center transform transition-transform duration-500"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                       >

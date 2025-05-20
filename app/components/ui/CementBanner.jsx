@@ -12,7 +12,8 @@ export default function CementBanner() {
   return (
     <div className="w-full my-8" ref={ref}>
       <div className="container mx-auto px-0">
-        <motion.div          className="relative w-full aspect-[4/1] overflow-hidden rounded-sm shadow-xl"
+        <motion.div 
+          className="relative w-full h-64 md:h-64 overflow-hidden rounded-sm shadow-xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7 }}

@@ -58,18 +58,9 @@ export default function NewsPage() {
       transition: { type: 'spring', stiffness: 300, damping: 25 }
     }
   }
+
   // Mock data for the news (would be replaced with actual data in production)
   const newsArticles = [
-    {
-      id: 8,
-      title: "Nyati Cement Engagement at the 2025 Annual Consultative Meeting for Contractors (ACM) organized by the CRB",
-      excerpt: "Lake Cement Ltd, the proud manufacturer of Nyati Cement, participated at the 2025 Annual Consultative Meeting for Contractors (ACM) and Exhibition in Dar es Salaam, engaging with over 500 stakeholders and highlighting opportunities for sector growth.",
-      date: "2025-05-16",
-      image: "/images/news/acm/1.jpg",
-      category: "company",
-      featured: true,
-      tag: "Industry Event"
-    },
     {
       id: 1,
       title: "Dar es Salaam Regional Commissioner Visits Lake Cement on Workers' Day",
@@ -112,7 +103,7 @@ export default function NewsPage() {
       title: "Lake Cement Leads Blood Donation Drive to Save Lives",
       excerpt: "Lake Cement has demonstrated corporate social responsibility through an impactful blood donation drive at our factory. The initiative aims to address the critical shortage of blood supplies in Tanzania's healthcare system and highlights our dedication to community health and wellbeing.",
       date: "2017-05-17",
-      image: "/images/news/damu4.webp",
+      image: "/images/news/damu4.jpg",
       category: "csr",
       link: "https://www.michuzi.co.tz/2017/05/lake-cement-yachangia-damu-katika.html"
     },
@@ -130,7 +121,7 @@ export default function NewsPage() {
       title: "Nyati Cement Hands Over Kigamboni Bus Terminal, Citizens Urged to Embrace Opportunities",
       excerpt: "Nyati Cement has officially handed over the newly constructed Kigamboni Bus Terminal to the District Commissioner. The company invested 46 million shillings in this infrastructure project, demonstrating its commitment to supporting President Samia Suluhu Hassan's efforts to bring essential services closer to citizens.",
       date: "2022-11-08",
-      image: "/images/news/bs3.webp",
+      image: "/images/news/bs3.jpg",
       category: "csr",
       featured: true,
       tag: "Community Development",
@@ -164,25 +155,14 @@ export default function NewsPage() {
   return (
     <div ref={contentRef} className="min-h-screen bg-gray-50">
       {/* Hero section with parallax effect */}
-      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+      <section className="relative h-60 md:h-72 lg:h-80 overflow-hidden">
         <motion.div 
-          className="absolute inset-0 z-0"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8 }}
+          className="absolute inset-0 w-full h-full"
+          style={{ y, opacity }}
         >
-          {/* Background Image */}            <div className="absolute inset-0">
-            <Image 
-              src="/images/crb.webp"
-              alt="Latest News and Updates"
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy via-nyati-navy/80 to-nyati-navy/60 opacity-90 z-10"></div>
-          </div>
-
-          {/* Animated Decorative Elements */}
+          <div className="absolute inset-0 bg-[url('/images/news/RC-Chalamila.png')] bg-cover bg-center z-0"></div>
+          
+          {/* Decorative Elements */}
           <motion.div 
             className="absolute top-1/3 right-10 w-64 h-64 bg-nyati-orange/10 rounded-sm blur-xl"
             animate={{ 
@@ -208,57 +188,21 @@ export default function NewsPage() {
               repeatType: "reverse" 
             }}
           />
-          
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.03, 0.1, 0.03] 
-            }}
-            transition={{ 
-              duration: 10, 
-              repeat: Infinity, 
-              repeatType: "reverse",
-              delay: 1.5
-            }}
-            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
-          />
         </motion.div>
-
-        <div className="container mx-auto px-4 h-full relative z-10">
-          <div className="flex flex-col justify-center h-full max-w-4xl">
-            {/* Breadcrumb Navigation */}
-            <nav className="mb-6">
-              <motion.ol 
-                className="flex items-center space-x-2 text-sm text-white/80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
-                <li><span className="text-white/60">/</span></li>
-                <li><span className="text-white">News</span></li>
-              </motion.ol>
-            </nav>
-
-            {/* Hero Title & Content */}
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
-              initial={{ opacity: 0, y: 20 }}
+        
+        {/* Content overlay */}
+        <div className="absolute inset-0 flex items-center z-20">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-4xl"
             >
-              Latest News
-              <br />
-              <span className="text-nyati-orange">& Updates</span>
-            </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Stay informed about our latest developments, achievements, and community initiatives.
-            </motion.p>
+              <h1 className="text-white text-4xl md:text-5xl font-bold mb-3 font-futura">
+                News & Updates
+              </h1>
+            </motion.div>
           </div>
         </div>
       </section>

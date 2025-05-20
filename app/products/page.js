@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import ProductCard from '@/app/components/ui/ProductCard'
 import KeyFeatureCard from '@/app/components/ui/KeyFeatureCard'
 import PackagingOption from '@/app/components/sections/PackagingOption'
@@ -238,96 +237,30 @@ export default function ProductsPage() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9])
   
   return (
-    <div className="bg-gray-50">
-      {/* Hero section with parallax effect */}
-      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
+    <>
+      {/* Hero Section */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black/40">
         <motion.div 
           className="absolute inset-0 z-0"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8 }}
+          style={{ opacity, scale }}
         >
-          {/* Background Image */}
-          <div className="absolute inset-0">
+          {!heroImageError ? (
             <Image 
-              src="/images/products/prod.jpg"
-              alt="Our Products"
+              src="/images/products/productshero.jpg"
+              alt="Nyati Cement Products"
               fill
               priority
               className="object-cover"
               onError={() => setHeroImageError(true)}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
-          </div>
-
-          {/* Animated Decorative Elements */}
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.1, 1],
-              opacity: [0.05, 0.15, 0.05] 
-            }}
-            transition={{ 
-              duration: 8, 
-              repeat: Infinity, 
-              repeatType: "reverse" 
-            }}
-            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
-          />
-          
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.03, 0.1, 0.03] 
-            }}
-            transition={{ 
-              duration: 10, 
-              repeat: Infinity, 
-              repeatType: "reverse",
-              delay: 1.5
-            }}
-            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
-          />
+          ) : (
+            // Fallback gradient background if image fails to load
+            <div className="w-full h-full"></div>
+          )}
         </motion.div>
-
-        <div className="container mx-auto px-4 h-full relative z-10">
-          <div className="flex flex-col justify-center h-full max-w-4xl">
-            {/* Breadcrumb Navigation */}
-            <nav className="mb-6">
-              <motion.ol 
-                className="flex items-center space-x-2 text-sm text-white/80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
-                <li><span className="text-white/60">/</span></li>
-                <li><span className="text-white">Products</span></li>
-              </motion.ol>
-            </nav>
-
-            {/* Hero Title & Content */}
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Premium
-              <br />
-              <span className="text-nyati-orange">Cement Products</span>
-            </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Discover our range of high-quality cement products engineered for excellence in every construction project.
-            </motion.p>
-          </div>
-        </div>
+      
       </section>
-
+      
       {/* Products Section */}
       <section ref={ref} className="py-2 bg-white">
         <div className="container mx-auto px-4">
@@ -542,6 +475,6 @@ export default function ProductsPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+    </>
   )
 }

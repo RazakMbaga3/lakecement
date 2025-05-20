@@ -85,7 +85,7 @@ export default function ExternalNewsArticlePage({ params }) {
       title: "Lake Cement Leads Blood Donation Drive to Save Lives",
       excerpt: "Lake Cement has demonstrated corporate social responsibility through an impactful blood donation drive at our factory. The initiative aims to address the critical shortage of blood supplies in Tanzania's healthcare system and highlights our dedication to community health and wellbeing.",
       date: "2017-05-17",
-      image: "/images/news/damu4.webp",
+      image: "/images/news/damu4.jpg",
       category: "csr",
       externalLink: "https://www.michuzi.co.tz/2017/05/lake-cement-yachangia-damu-katika.html",
       source: "Michuzi Blog",
@@ -155,15 +155,17 @@ export default function ExternalNewsArticlePage({ params }) {
 
   return (
     <div ref={contentRef} className="min-h-screen bg-gray-50">
-      {/* Hero section */}      <section className="relative h-72 md:h-96 overflow-hidden">
+      {/* Hero section */}
+      <section className="relative h-72 md:h-96 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent z-10"></div>
         <div className="absolute inset-0 z-0">
           <Image 
             src={article.image}
             alt={article.title}
-            fill            priority
+            fill
+            priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent z-10"></div>
         </div>
         
         {/* Content overlay */}

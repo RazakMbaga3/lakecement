@@ -42,6 +42,15 @@ export default function CompressiveStrengthPage() {
       <p className="lead text-xl mb-6">
         When evaluating cement quality, compressive strength stands as the single most important performance metric. It determines how much load a structure can safely bear, influences durability, and serves as the primary indicator of overall cement quality. At Nyati Cement, we maintain rigorous testing standards that exceed industry requirements, ensuring every bag delivers consistent, reliable performance for your construction projects.
       </p>
+                 <div className="relative h-96 w-full mb-8 rounded-sm overflow-hidden">
+                    <Image 
+                      src="/images/blog/compression-test.jpg" 
+                      alt="Compressive strength testing machine with concrete cube specimen" 
+                      fill 
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
 
       <div className="my-8 rounded-sm overflow-hidden relative aspect-w-16 aspect-h-9 bg-gray-100">
         {/* Placeholder for actual image */}

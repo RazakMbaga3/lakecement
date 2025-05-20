@@ -1,9 +1,8 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useState } from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 // Animation variants
 const fadeIn = {
@@ -97,109 +96,53 @@ export default function DistributionForm() {
   };
 
   return (
-    <div className="bg-gray-50">
-      {/* Hero Section with Modern Design */}
-      <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden">
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8 }}
+    <>
+      {/* Split Hero Banner */}
+      <div className="relative flex flex-col lg:flex-row">
+        {/* Left Side - Text Content */}
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={slideIn}
+          className="lg:w-1/2 bg-nyati-navy text-white px-8 py-16 lg:py-24 flex items-center"
         >
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <Image 
-              src="/images/distribution/driver.jpg"
-              alt="Distribution Network"
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent"></div>
+          <div className="max-w-xl mx-auto">
+            <h1 className="text-2xl text-nyati-orange md:text-4xl lg:text-5xl font-bold mb-6">
+              Distribution Network
+            </h1>
+            <p className="text-xl md:text-xl text-white/90 leading-relaxed">
+              Our extensive distribution network ensures Nyati Cement reaches every corner of Tanzania, 
+              supporting construction projects of all sizes with reliable supply and excellent service.
+            </p>
           </div>
-
-          {/* Animated Decorative Elements */}
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.1, 1],
-              opacity: [0.05, 0.15, 0.05] 
-            }}
-            transition={{ 
-              duration: 8, 
-              repeat: Infinity, 
-              repeatType: "reverse" 
-            }}
-            className="absolute top-20 right-10 w-64 h-64 bg-nyati-orange/10 rounded-full blur-3xl"
-          />
-          
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.03, 0.1, 0.03] 
-            }}
-            transition={{ 
-              duration: 10, 
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: 1.5
-            }}
-            className="absolute bottom-10 left-10 w-80 h-80 bg-nyati-orange/5 rounded-full blur-3xl"
-          />
         </motion.div>
 
-        <div className="container mx-auto px-4 h-full relative z-10">
-          <div className="flex flex-col justify-center h-full max-w-4xl">
-            {/* Breadcrumb Navigation */}
-            <nav className="mb-6">
-              <motion.ol 
-                className="flex items-center space-x-2 text-sm text-white/80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <li><Link href="/" className="hover:text-nyati-orange transition-colors">Home</Link></li>
-                <li><span className="text-white/60">/</span></li>
-                <li><span className="text-white">Distribution</span></li>
-              </motion.ol>
-            </nav>
-
-            {/* Hero Title & Content */}
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_40%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Delivering Quality
-              <br />
-              <span className="text-nyati-orange">Nationwide</span>
-            </motion.h1>
-
-            <motion.p 
-              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Join our growing network of distributors and be part of Nyati's commitment 
-              to delivering excellence across Tanzania.
-            </motion.p>
-
-            {/* Key Metrics */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-            >
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">24/7</div>
-                <div className="text-white text-sm">Support</div>
-              </div>
-            </motion.div>
+        {/* Right Side - Image */}
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="lg:w-1/2 relative h-[400px] lg:h-auto"
+        >
+          <Image 
+            src="/images/distribution/driver.png"
+            alt="Distribution Network" 
+            fill
+            priority
+            className="object-cover"
+          />
+          
+          {/* Truck image overlay */}
+          <div className="absolute left-0 bottom-0 w-64 h-40 md:w-80 md:h-48">
+            <Image 
+              src="/images/nyati-truck-container.png" 
+              alt="Nyati Truck" 
+              fill
+              className="object-contain"
+            />
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </div>
 
       {/* Hotline Section - Styled similarly to the reference */}
       <div className="bg-white py-2 border-b border-gray-200">
@@ -379,9 +322,9 @@ export default function DistributionForm() {
               </div>
               
               <div className="bg-white">
-                <div className="relative h-72 w-full overflow-hidden rounded-sm">
+                <div className="relative h-60 w-full overflow-hidden rounded-sm">
                   <Image 
-                    src="/images/distribution/fundis.jpg" 
+                    src="/images/trainee.jpeg" 
                     alt="Technical Seminar" 
                     fill
                     className="object-cover"
@@ -395,6 +338,6 @@ export default function DistributionForm() {
           </motion.div>
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
 }
