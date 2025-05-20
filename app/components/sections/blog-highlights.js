@@ -29,7 +29,7 @@ const featuredPosts = [
     id: 'infrastructure-boom',
     title: 'Tanzania\'s Infrastructure Boom: The Role of Quality Cement in Nation Building',
     excerpt: 'Explore how quality cement is driving infrastructure development across Tanzania.',
-    image: '/images/blog/RufijiDam1.jpg',
+    image: '/images/blog/nyereredam.webp',
     date: 'March 20, 2025',
     category: 'Industry Insights',
     slug: '/blog/tanzania-infrastructure-boom',
