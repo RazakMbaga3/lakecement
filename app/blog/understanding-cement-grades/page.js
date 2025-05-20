@@ -52,11 +52,11 @@ export default function CementGradesPage() {
 
       <h2 className="text-2xl font-bold text-nyati-navy mt-8 mb-4">What Do Cement Grade Numbers Mean?</h2>
       <p>
-        The numbers in cement grades (such as 32.5N or 42.5R) indicate the minimum compressive strength in megapascals (MPa) the cement will achieve after 28 days of curing. The letter indicates the rate of strength development:
+        The numbers in cement grades (such as 32.5N or 42.5R) indicate the minimum compressive strength in megapascals (MPa) the cement will achieve after 28 days of curing.
       </p>
       <ul className="list-disc pl-6 mt-3 mb-6">
+         <li><strong>R</strong> (Rapid): Higher early strength development</li>
         <li><strong>N</strong> (Normal): Standard early strength development</li>
-        <li><strong>R</strong> (Rapid): Higher early strength development</li>
       </ul>
 
       <div className="bg-nyati-cream p-6 rounded-lg my-8">
