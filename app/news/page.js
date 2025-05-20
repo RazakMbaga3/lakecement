@@ -173,7 +173,7 @@ export default function NewsPage() {
         >
           {/* Background Image */}            <div className="absolute inset-0">
             <Image 
-              src="/images/news/crb.jpg"
+              src="/images/crb.webp"
               alt="Latest News and Updates"
               fill
               priority
