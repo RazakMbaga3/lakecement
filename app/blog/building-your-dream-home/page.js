@@ -94,7 +94,7 @@ export default function BuildingYourDreamHomePage() {
       <h3>Concrete Mixture</h3>
       <p>For a strong foundation, the right cement mixture is crucial:</p>
       <ul>
-        <li>Use Nyati Super 42 cement for foundations due to its high strength and durability</li>
+        <li>Use Nyati 42.5R cement for foundations due to its high strength and durability</li>
         <li>Mix at a ratio prescribed by your structural engineer</li>
         <li>Maintain a water-cement ratio as recommended by construction experts for optimal strength</li>
         <li>Mix thoroughly until you achieve a consistent texture</li>
@@ -102,7 +102,7 @@ export default function BuildingYourDreamHomePage() {
 
       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
         <p className="font-bold">Pro Tip:</p>
-        <p>Never compromise on foundation quality. Using high-quality Nyati Super 42 cement for your foundation will ensure the long-term stability of your entire structure with its superior load-bearing capacity and early strength development.</p>
+        <p>Never compromise on foundation quality. Using high-quality Nyati 42.5R cement for your foundation will ensure the long-term stability of your entire structure with its superior load-bearing capacity and early strength development.</p>
       </div>
 
       <h3>Pouring the Foundation</h3>
@@ -122,7 +122,7 @@ export default function BuildingYourDreamHomePage() {
         <li>Create reinforcement cages using steel bars as specified by your structural engineer</li>
         <li>Place the cages at designated points along the foundation</li>
         <li>Build formwork around the reinforcement</li>
-        <li>Use Nyati Super 42 cement at a ratio prescribed by an engineer for columns</li>
+        <li>Use Nyati 42.5R cement at a ratio prescribed by an engineer for columns</li>
         <li>Pour the concrete and vibrate to remove air pockets</li>
         <li>Allow columns to cure for the duration recommended by your structural engineer</li>
       </ul>
@@ -141,7 +141,7 @@ export default function BuildingYourDreamHomePage() {
       <ul>
         <li>Set up formwork and reinforcement for beams</li>
         <li>Connect beam reinforcement to column reinforcement</li>
-        <li>Use Nyati Super 42 cement mixture as advised by an engineer for optimal strength</li>
+        <li>Use Nyati 42.5R cement mixture as advised by an engineer for optimal strength</li>
         <li>Ensure proper curing with regular watering as directed by your construction expert</li>
       </ul>
 
@@ -150,7 +150,7 @@ export default function BuildingYourDreamHomePage() {
       <h3>Bricklaying</h3>
       <p>Quality brickwork requires precision and the right mortar:</p>
       <ul>
-        <li>Use Nyati Max 32 cement for mortar at a ratio advised by a professional mason</li>
+        <li>Use Nyati 32.5N cement for mortar at a ratio advised by a professional mason</li>
         <li>Lay out the first course of bricks to mark wall positions</li>
         <li>Build corners first as guides for wall height and alignment</li>
         <li>Use a string line between corners to ensure straight walls</li>
@@ -159,15 +159,15 @@ export default function BuildingYourDreamHomePage() {
       </ul>
 
       <div className="bg-green-50 border-l-4 border-green-500 p-4 my-6">
-        <p className="font-bold">Why Nyati Max 32 for Mortar?</p>
-        <p>Nyati Max 32 offers superior adhesion that eliminates the need for extra lime in plasters. Its great workability and plasticity makes it perfect for creating smooth, durable mortar joints with excellent bonding properties.</p>
+        <p className="font-bold">Why Nyati 32.5N for Mortar?</p>
+        <p>Nyati 32.5N offers superior adhesion that eliminates the need for extra lime in plasters. Its great workability and plasticity makes it perfect for creating smooth, durable mortar joints with excellent bonding properties.</p>
       </div>
 
       <h3>Creating Openings</h3>
       <p>Plan for doors and windows during wall construction:</p>
       <ul>
         <li>Use temporary supports (lintels) above door and window openings</li>
-        <li>Construct permanent concrete lintels with Nyati Super 42 cement</li>
+        <li>Construct permanent concrete lintels with Nyati 42.5R cement</li>
         <li>Allow lintels to cure fully before removing temporary supports, as advised by your engineer</li>
       </ul>
 
@@ -185,7 +185,7 @@ export default function BuildingYourDreamHomePage() {
       <p>For flat concrete roofs:</p>
       <ul>
         <li>Build formwork and reinforcement for the roof slab</li>
-        <li>Use Nyati Super 42 cement at a ratio prescribed by an engineer for high-grade concrete with superior load-bearing capacity</li>
+        <li>Use Nyati 42.5R cement at a ratio prescribed by an engineer for high-grade concrete with superior load-bearing capacity</li>
         <li>Consider adding waterproofing admixtures to the mix</li>
         <li>Pour the concrete and level carefully</li>
         <li>Cure for the duration recommended by your structural engineer before adding further waterproofing</li>
@@ -193,7 +193,7 @@ export default function BuildingYourDreamHomePage() {
 
       <div className="bg-amber-50 border-l-4 border-amber-500 p-4 my-6">
         <p className="font-bold">Important Note:</p>
-        <p>Proper curing is essential for concrete strength development. Always keep newly poured concrete moist for the duration recommended by your engineer to achieve maximum strength. With Nyati Super 42, you'll notice faster strength development thanks to its high initial strength properties.</p>
+        <p>Proper curing is essential for concrete strength development. Always keep newly poured concrete moist for the duration recommended by your engineer to achieve maximum strength. With Nyati 42.5R, you'll notice faster strength development thanks to its high initial strength properties.</p>
       </div>
 
       <h2>6. Finishing Work</h2>
@@ -201,7 +201,7 @@ export default function BuildingYourDreamHomePage() {
       <h3>Plastering</h3>
       <p>Smooth walls require quality plastering:</p>
       <ul>
-        <li>Mix Nyati Max 32 cement with fine sand at the ratio prescribed by your mason for plastering</li>
+        <li>Mix Nyati 32.5N cement with fine sand at the ratio prescribed by your mason for plastering</li>
         <li>Apply a thin scratch coat first to ensure adhesion</li>
         <li>Follow with a leveling coat at the thickness recommended by your plastering professional</li>
         <li>Finish with a thin final coat for a smooth surface</li>
@@ -220,8 +220,8 @@ export default function BuildingYourDreamHomePage() {
       <h3>Flooring</h3>
       <p>Durable floors start with proper concrete:</p>
       <ul>
-        <li>Create a base layer with Nyati Max 32 cement mixed according to your contractor's specifications</li>
-        <li>For the finish layer, use Nyati Super 42 with a stronger mix as advised by your flooring expert for higher durability</li>
+        <li>Create a base layer with Nyati 32.5N cement mixed according to your contractor's specifications</li>
+        <li>For the finish layer, use Nyati 42.5R with a stronger mix as advised by your flooring expert for higher durability</li>
         <li>Consider adding floor hardeners for high-traffic areas</li>
         <li>Allow the floor to cure fully before applying tiles or other finishes, as recommended by your contractor</li>
       </ul>
@@ -239,7 +239,7 @@ export default function BuildingYourDreamHomePage() {
       <h3>Coastal Regions</h3>
       <p>For homes near the ocean:</p>
       <ul>
-        <li>Use Nyati Super 42 cement for all structural elements to resist salt corrosion</li>
+        <li>Use Nyati 42.5R cement for all structural elements to resist salt corrosion</li>
         <li>Increase concrete cover over reinforcement as specified by your coastal construction expert</li>
         <li>Consider additional waterproofing treatments</li>
       </ul>
@@ -249,7 +249,7 @@ export default function BuildingYourDreamHomePage() {
       <ul>
         <li>Ensure proper roof overhangs to protect walls, as designed by your architect</li>
         <li>Create adequate drainage around the house</li>
-        <li>Use Nyati Super 42 cement for external applications where water resistance is critical</li>
+        <li>Use Nyati 42.5R cement for external applications where water resistance is critical</li>
         <li>Consider raised foundations to prevent flooding, as advised by your engineer</li>
       </ul>
 
