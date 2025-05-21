@@ -171,7 +171,7 @@ export default function EnhancedCSRPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/news/bs2.jpg"
+              src="/images/news/csrhero.webp"
               alt="Corporate Social Responsibility"
               fill
               priority
