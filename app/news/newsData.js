@@ -1,55 +1,5 @@
-'use client'
-
-import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Newsletter from '@/app/components/ui/Newsletter'
-import ShareButtons from '@/app/components/ui/ShareButtons'
-import RelatedNews from '../components/RelatedNews'
-
-export default function NewsArticlePage({ params }) {
-  // Get article ID from route parameters
-  const articleId = parseInt(params.id)
-  
-  // State for reading time
-  const [readingTime, setReadingTime] = useState('3 min')
-  
-  // Ref for scroll animations
-  const contentRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: contentRef,
-    offset: ["start end", "end start"]
-  })
-
-  // Parallax and animation effects
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50])
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0.6, 1, 1])
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 300, damping: 25 }
-    }
-  }
-
-  // Mock database for articles - in production this would be fetched from an API or CMS
-  const newsArticles = [
-    {
+const newsArticles = [
+ {
       id: 1,
       title: "Dar es Salaam Regional Commissioner Visits Lake Cement on Workers' Day",
       excerpt: "The Dar es Salaam Regional Commissioner, Hon. Chalamila, has announced upcoming inspections of workplaces, including factories, to assess employee relations and working conditions. Lake Cement welcomed this initiative as part of our commitment to maintaining excellent labor standards.",
@@ -109,10 +59,8 @@ export default function NewsArticlePage({ params }) {
       author: "Lake Cement Communications Team",
       mainImage: "/images/news/chalamila.jpg",
       gallery: [
-        "/images/news/chalamila.jpg",
-        "/images/news/kigamboni-bridge.jpg",
-        "/images/news/community-meeting.jpg",
-        "/images/news/construction-site.jpg"
+        "/images/news/chalamila.jpg"
+    
       ],
       category: "company",
       featured: true,
@@ -325,259 +273,26 @@ export default function NewsArticlePage({ params }) {
         externalLink: "https://www.michuzi.co.tz/2022/11/nyati-cement-wakabidhi-stendi-ya-kigamboni.html",
         relatedArticles: [3, 5, 2]
       }
-  ];
 
-  // Get current article based on ID
-  const article = newsArticles.find(article => article.id === articleId);
-  
-  // Get related articles
-  const relatedArticleData = article?.relatedArticles.map(id => 
-    newsArticles.find(article => article.id === id)
-  ).filter(Boolean) || [];
 
-  // Format date for consistency
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', options);
-  };
 
-  // If article not found
-  if (!article) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center p-8 max-w-md">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-nyati-orange mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h1 className="text-2xl font-bold text-nyati-navy mb-4">Article Not Found</h1>
-          <p className="text-gray-600 mb-6">The article you're looking for doesn't exist or has been removed.</p>
-          <Link href="/news" className="inline-flex items-center px-4 py-2 bg-nyati-orange text-white rounded-sm hover:bg-nyati-orange/90 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to News
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // Additional articles can be added here
+];
 
-  return (
-    <div ref={contentRef} className="min-h-screen bg-gray-50">
-      {/* Hero section with parallax effect */}
-      <section className="relative h-[70vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
-        <motion.div 
-          className="absolute inset-0 w-full h-full"
-          style={{ y, opacity }}
-        >          <div className="absolute inset-0 z-0">
-            <Image 
-              src={article.mainImage}
-              alt={article.title}
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-nyati-navy/95 via-nyati-navy/40 to-transparent z-10"></div>
-          </div>
-          
-          {/* Decorative Elements */}
-          <motion.div 
-            className="absolute top-1/3 right-10 w-64 h-64 bg-nyati-orange/10 rounded-sm blur-xl"
-            animate={{ 
-              scale: [1, 1.1, 1],
-              x: [0, 10, 0],
-            }}
-            transition={{ 
-              duration: 6,
-              repeat: Infinity,
-              repeatType: "reverse" 
-            }}
-          />
-          
-          <motion.div 
-            className="absolute bottom-0 left-1/4 w-40 h-40 bg-nyati-green/10 rounded-sm blur-xl"
-            animate={{ 
-              scale: [1, 1.15, 1],
-              y: [0, -10, 0],
-            }}
-            transition={{ 
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse" 
-            }}
-          />
-        </motion.div>
-        
-        {/* Content overlay */}
-        <div className="absolute inset-0 flex items-center z-20">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="max-w-4xl"
-            >
-              {/* Metadata Section */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6">
-                <span className={`inline-block text-white text-xs px-3 py-1 rounded-sm uppercase font-semibold tracking-wide ${
-                  article.category === 'company' ? 'bg-nyati-navy' :
-                  article.category === 'csr' ? 'bg-nyati-green' :
-                  'bg-nyati-orange'
-                }`}>
-                  {article.category === 'company' ? 'Company' :
-                   article.category === 'csr' ? 'CSR' :
-                   'Product'}
-                </span>
-                <span className="text-white/80 text-xs sm:text-sm">
-                  {formatDate(article.date)}
-                </span>
-                <span className="text-white/80 text-xs sm:text-sm flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {readingTime} read
-                </span>
-              </div>
+export function getNewsArticle(id) {
+  return newsArticles.find(article => article.id.toString() === id.toString());
+}
 
-              {/* Title Section */}
-              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-futura leading-tight">
-                {article.title}
-              </h1>
-              <div className="h-1 w-24 md:w-32 bg-nyati-orange mb-4"></div>
-              <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed">
-                {article.fullContent.intro}
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+export function getRelatedArticles(currentId, limit = 3) {
+  return newsArticles
+    .filter(article => article.id !== currentId)
+    .slice(0, limit);
+}
 
-      <main className="relative mt-6 z-30">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="bg-white rounded-sm shadow-soft p-8 md:p-12 mb-12">
-            {/* Article Content */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="prose max-w-none prose-lg prose-headings:font-futura prose-headings:text-nyati-navy prose-a:text-nyati-orange hover:prose-a:text-nyati-orange/80"
-            >
-              {/* Main paragraphs */}
-              <div className="mb-10">
-                {article.fullContent.paragraphs.map((paragraph, index) => (
-                  <motion.p 
-                    key={index} 
-                    variants={itemVariants}
-                    className="mb-6 text-gray-700"
-                  >
-                    {paragraph}
-                  </motion.p>
-                ))}
-              </div>
-              
-              {/* Image Gallery */}
-              <motion.div 
-                variants={itemVariants}
-                className="my-12"
-              >
-                <h2 className="text-2xl font-bold mb-6 text-nyati-navy font-futura">Image Gallery</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {article.gallery.map((image, index) => (
-                    <div key={index} className="relative aspect-video rounded-sm overflow-hidden shadow-soft">
-                      <Image
-                        src={image}
-                        alt={`${article.title} - Image ${index + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-              
-              {/* Quote Section */}
-              {article.fullContent.quote && (
-                <motion.div 
-                  variants={itemVariants}
-                  className="my-12 border-l-4 border-nyati-orange pl-6 py-2"
-                >
-                  <blockquote className="text-xl text-gray-700 italic">
-                    "{article.fullContent.quote.text}"
-                    <footer className="mt-2 text-base font-semibold text-nyati-navy">
-                      {article.fullContent.quote.author}
-                    </footer>
-                  </blockquote>
-                </motion.div>
-              )}
-              
-              {/* Additional Content */}
-              <div className="mb-10">
-                {article.fullContent.additionalContent.map((paragraph, index) => (
-                  <motion.p 
-                    key={index} 
-                    variants={itemVariants}
-                    className="mb-6 text-gray-700"
-                  >
-                    {paragraph}
-                  </motion.p>
-                ))}
-              </div>
-              
-              {/* Conclusion */}
-              <motion.div variants={itemVariants}>
-                <h2 className="text-xl font-bold mb-4 text-nyati-navy font-futura">Looking Forward</h2>
-                <p className="text-gray-700">
-                  {article.fullContent.conclusion}
-                </p>
-              </motion.div>
-              
-              {/* Share Section */}
-              <motion.div 
-                variants={itemVariants}
-                className="mt-12 pt-8 border-t border-gray-200"
-              >                <ShareButtons title={article.title} />
-              </motion.div>
-          
-            </motion.div>
-          </div>
-          
-          {/* Related Articles */}
-          {relatedArticleData.length > 0 && (
-            <RelatedNews articles={relatedArticleData} />
-          )}
-          
-          {/* Back to News Button */}
-          <div className="flex justify-center mb-12">
-            <Link 
-              href="/news" 
-              className="inline-flex items-center px-5 py-3 bg-nyati-navy text-white rounded-sm hover:bg-nyati-navy/90 transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Back to All News
-            </Link>
-          </div>
-          
-          {/* Newsletter Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-12"
-          >
-            <Newsletter />
-          </motion.div>
-          
-          {/* Bottom decorative element */}
-          <div className="flex justify-center mb-8">
-            <div className="w-32 h-1 bg-gradient-to-r from-nyati-navy via-nyati-orange to-nyati-green rounded-sm"></div>
-          </div>
-        </div>
-      </main>
-    </div>
-  )
+export function getAllArticles() {
+  return newsArticles;
+}
+
+export function getArticlesByCategory(category) {
+  return newsArticles.filter(article => article.category === category);
 }
