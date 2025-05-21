@@ -176,18 +176,11 @@ export default function CareersPage() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      <div className="container mx-auto px-4 py-12">
-        {/* Rest of the content */}
-        <div className="relative">
-          {/* Spacer to push content below fold */}
-          <div className="h-screen"></div>
-          
-          {/* Main content with solid white background that extends to footer */}
-          <div className="relative bg-white min-h-screen z-10 shadow-xl">
-            <div className="bg-white w-full h-full"> {/* Full-width/height white background */}
-              <main className="py-16">
+      </section>      <div className="container mx-auto px-4">
+        {/* Main content with solid white background that extends to footer */}
+        <div className="relative bg-white min-h-screen z-10 shadow-xl mt-12">
+          <div className="bg-white w-full h-full">
+            <main className="py-16">
                 <div className="container mx-auto px-4 max-w-6xl">
                   {/* Mission Statement - More compact */}
                   <motion.div 
@@ -415,6 +408,5 @@ export default function CareersPage() {
           </div>
         </div>
       </div>
-    </div>
   )
 }

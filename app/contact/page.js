@@ -67,7 +67,7 @@ export default function ContactPage() {
       position: "Strategic Business Head",
       address: "First Floor, ATC House, Plot 773/40, Ohio Street,\nPO Box-40707, Dar-Es-Salaam, Tanzania",
       phone: "Tel: +255 22 2139610",
-      email: "ipn_p@lakecement.co.tz"
+      email: "indra.pathak@lakecement.co.tz"
     },
     plant: {
       title: "Plant",
