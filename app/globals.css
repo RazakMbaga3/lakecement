@@ -71,7 +71,7 @@
 
   /* Links */
   a {
-    @apply text-nyati-orange hover:text-orange-600 transition-colors duration-200;
+    @apply text-nyati-orange hover:text-nyati-light-orange transition-colors duration-200;
   }
 }
 

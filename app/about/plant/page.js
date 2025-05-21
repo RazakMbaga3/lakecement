@@ -167,15 +167,7 @@ export default function PlantPage() {
               <span className="text-nyati-orange">Manufacturing</span>
             </motion.h1>
 
-            <motion.p 
-              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8 [text-shadow:_1px_1px_2px_rgb(0_0_0_/_30%)]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Discover our modern cement manufacturing facility that combines innovative technology 
-              with sustainable practices.
-            </motion.p>
+  
 
             <motion.div 
               className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
@@ -188,8 +180,21 @@ export default function PlantPage() {
                 <div className="text-white text-sm">Annual Capacity</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">99%</div>
-                <div className="text-white text-sm">Equipment Uptime</div>
+                <div className="text-nyati-orange text-2xl font-bold mb-1">Own</div>
+                <div className="text-white text-sm">Power</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">Own</div>
+                <div className="text-white text-sm">Clinker</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">Integrated</div>
+                <div className="text-white text-sm">Manufacturing</div>
+              </div>
+  
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
+                <div className="text-nyati-orange text-2xl font-bold mb-1">Enhanced</div>
+                <div className="text-white text-sm">Sustainability</div>
               </div>
               <div className="hidden md:block bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
                 <div className="text-nyati-orange text-2xl font-bold mb-1">ISO</div>

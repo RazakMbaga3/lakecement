@@ -253,7 +253,7 @@ export default function VideoSection() {
                     href="https://www.youtube.com/channel/UChjS00dKvqhw0uSoepoqIIQ"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-nyati-navy hover:bg-nyati-orange text-white px-6 py-3 rounded-sm transition-colors duration-300 shadow-md"
+                    className="inline-flex items-center bg-nyati-navy hover:bg-nyati-navy/5 text-white px-6 py-3 rounded-sm transition-colors duration-300 shadow-md"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
