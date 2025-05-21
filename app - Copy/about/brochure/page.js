@@ -87,7 +87,7 @@ export default function BrochurePage() {
                   <motion.a 
                     href="/PDF/Brochure2024.pdf" 
                     download
-                    className="inline-flex items-center justify-center bg-nyati-orange hover:bg-nyati-navy text-white px-8 py-4 rounded-sm text-lg font-medium transition-colors duration-300 shadow-lg w-full sm:w-auto"
+                    className="inline-flex items-center justify-center bg-nyati-orange hover:bg-orange-600 text-white px-8 py-4 rounded-sm text-lg font-medium transition-colors duration-300 shadow-lg w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
