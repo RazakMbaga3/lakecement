@@ -329,7 +329,7 @@ export default function TanzaniaInfrastructurePage() {
         <div className="flex justify-center mt-4">
           <Link 
             href="/products" 
-            className="bg-nyati-orange hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
+            className="bg-nyati-orange hover:bg-nyati-navy text-white font-medium px-6 py-3 rounded-sm transition-colors inline-flex items-center"
           >
             Explore Our Products
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

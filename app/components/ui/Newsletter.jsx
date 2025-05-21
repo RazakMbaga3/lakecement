@@ -56,7 +56,7 @@ export default function Newsletter() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-3 rounded-sm bg-nyati-orange text-white font-medium hover:bg-orange-600 transition-colors duration-300 disabled:opacity-50"
+            className="px-6 py-3 rounded-sm bg-nyati-orange text-white font-medium hover:bg-nyati-navy transition-colors duration-300 disabled:opacity-50"
           >
             {isSubmitting ? 'Subscribing...' : 'Subscribe'}
           </button>

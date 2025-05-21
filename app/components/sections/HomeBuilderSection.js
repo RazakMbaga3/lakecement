@@ -172,7 +172,7 @@ const HomeBuilderSection = () => {
             <div className="mt-8">
               <Link 
                 href="/home-building-guide" 
-                className="bg-nyati-orange hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-medium inline-flex items-center transition-colors"
+                className="bg-nyati-orange hover:bg-nyati-navy text-white py-3 px-6 rounded-lg font-medium inline-flex items-center transition-colors"
               >
                 Complete Home Building Guide
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

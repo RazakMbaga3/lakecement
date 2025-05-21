@@ -86,7 +86,7 @@
   }
 
   .btn-primary {
-    @apply bg-nyati-orange text-white hover:bg-orange-600;
+    @apply bg-nyati-orange text-white hover:bg-nyati-navy;
   }
 
   .btn-secondary {

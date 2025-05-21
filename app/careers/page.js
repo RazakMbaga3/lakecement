@@ -379,7 +379,7 @@ export default function CareersPage() {
                           </p>
                           <motion.a 
                             href="mailto:career@lakecement.co.tz" 
-                            className="inline-block bg-nyati-orange text-white font-semibold px-6 py-3 rounded-sm hover:bg-orange-600 transition-colors duration-300"
+                            className="inline-block bg-nyati-orange text-white font-semibold px-6 py-3 rounded-sm hover:bg-nyati-navy transition-colors duration-300"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
                           >

@@ -11,7 +11,7 @@ const buttonVariants = cva(
   {
     variants: {
       intent: {
-        primary: "bg-nyati-orange text-white hover:bg-orange-600 focus:ring-orange-500",
+        primary: "bg-nyati-orange text-white hover:bg-nyati-navy focus:ring-orange-500",
         secondary: "bg-nyati-navy text-white hover:bg-navy-700 focus:ring-navy-600",
         green: "bg-nyati-green text-white hover:bg-green-700 focus:ring-green-600",
         outline: "bg-transparent border-2 border-nyati-orange text-nyati-orange hover:bg-orange-50 focus:ring-orange-500",

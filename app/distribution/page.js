@@ -341,7 +341,7 @@ export default function DistributionForm() {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="bg-nyati-orange text-white py-1 px-4 text-sm rounded-sm hover:bg-orange-600 transition-colors duration-300 disabled:opacity-50"
+                  className="bg-nyati-orange text-white py-1 px-4 text-sm rounded-sm hover:bg-nyati-navy transition-colors duration-300 disabled:opacity-50"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
