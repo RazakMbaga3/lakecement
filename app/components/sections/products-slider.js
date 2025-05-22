@@ -33,7 +33,7 @@ const products = [
     id: 3,
     name: 'Nyati OPC',
     image: '/images/products/Nyati-OPC.png',
-    description: 'Pure Portland cement for specialized applications',
+    description: 'CEM I OPC 42.5N for specialized applications',
     specs: [
       'High pure clinker content',
       'Superior strength',
