@@ -176,7 +176,7 @@ export default function PlantPage() {
               transition={{ delay: 0.7 }}
             >
               <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
-                <div className="text-nyati-orange text-2xl font-bold mb-1">1.2M</div>
+                <div className="text-nyati-orange text-2xl font-bold mb-1">1M Tons</div>
                 <div className="text-white text-sm">Annual Capacity</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-4 rounded-sm border border-white/10">
