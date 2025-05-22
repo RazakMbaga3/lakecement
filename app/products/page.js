@@ -129,7 +129,7 @@ const applications = [
   {
     title: 'High-Grade Concrete',
     description: 'Delivers exceptional load-bearing capacity and long-term durability for demanding large-scale construction projects, from high-rise buildings to infrastructure.',
-    image: '/images/products/brt1.jpg',
+    image: '/images/products/brt1.webp',
   },
   {
     title: 'Ready-Mix Concrete',
