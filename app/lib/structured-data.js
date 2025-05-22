@@ -1,3 +1,5 @@
+import { blogConfig } from '../blog/metadata';
+
 export const generateOrganizationSchema = () => {
   return {
     '@context': 'https://schema.org',
@@ -45,43 +47,81 @@ export const generateProductSchema = (product) => {
   }
 }
 
-export const generateArticleSchema = (article) => {
+export function generateArticleSchema({
+  title,
+  description,
+  path,
+  images,
+  published,
+  author,
+  category
+}) {
+  const categoryData = blogConfig.categories.find(c => c.id === category?.toLowerCase()?.replace(/\s+/g, '-'));
+  const authorData = blogConfig.authors.find(a => a.id === author) || { name: author };
+
   return {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    headline: article.title,
-    description: article.excerpt,
-    image: article.mainImage,
-    datePublished: article.date,
-    dateModified: article.modifiedDate || article.date,
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    image: images.map(image => image.startsWith('http') ? image : `https://nyaticemet.com${image}`),
+    datePublished: published,
+    dateModified: published,
     author: {
-      '@type': 'Organization',
-      name: 'Lake Cement Ltd'
+      "@type": "Person",
+      name: authorData.name,
+      ...(authorData.role && { jobTitle: authorData.role })
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Lake Cement Ltd',
+      "@type": "Organization",
+      name: "Lake Cement Ltd",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://lakecement.co.tz/images/lake-cement-ltd.png'
+        "@type": "ImageObject",
+        url: "https://nyaticemet.com/images/lake-cement-ltd.png"
       }
     },
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://lakecement.co.tz/news/${article.id}`
-    }
-  }
+      "@type": "WebPage",
+      "@id": `https://nyaticemet.com${path}`
+    },
+    articleSection: categoryData?.name || category,
+    keywords: [
+      "Nyati Cement",
+      "Lake Cement",
+      "Tanzania cement",
+      "construction",
+      category,
+      ...(categoryData?.description?.split(' ') || [])
+    ].filter(Boolean)
+  };
 }
 
-export const generateBreadcrumbSchema = (breadcrumbs) => {
+export function generateBreadcrumbSchema(items) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((breadcrumb, index) => ({
-      '@type': 'ListItem',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
       position: index + 1,
-      name: breadcrumb.name,
-      item: breadcrumb.href
+      item: {
+        "@id": item.url,
+        name: item.name
+      }
     }))
-  }
+  };
+}
+
+export function generateFAQSchema(questions) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map(q => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer
+      }
+    }))
+  };
 }

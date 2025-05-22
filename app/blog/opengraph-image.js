@@ -10,10 +10,6 @@ export const contentType = 'image/png';
 
 export default async function Image({ params }) {
   try {
-    const interSemiBold = await fetch(
-      new URL('./Inter-SemiBold.ttf', import.meta.url)
-    ).then((res) => res.arrayBuffer());
-
     return new ImageResponse(
       (
         <div
@@ -60,7 +56,7 @@ export default async function Image({ params }) {
               <h1
                 style={{
                   fontSize: 60,
-                  fontFamily: 'Inter',
+                  fontFamily: 'system-ui',
                   fontWeight: 700,
                   color: '#1e293b',
                   lineHeight: 1.1,
@@ -75,7 +71,7 @@ export default async function Image({ params }) {
               <p
                 style={{
                   fontSize: 30,
-                  fontFamily: 'Inter',
+                  fontFamily: 'system-ui',
                   color: '#64748b',
                   marginTop: 0,
                   textAlign: 'center',
@@ -101,14 +97,8 @@ export default async function Image({ params }) {
       ),
       {
         ...size,
-        fonts: [
-          {
-            name: 'Inter',
-            data: interSemiBold,
-            style: 'normal',
-            weight: 400,
-          },
-        ],
+        // Using system fonts instead of loading custom fonts
+        fonts: []
       }
     );
   } catch (e) {

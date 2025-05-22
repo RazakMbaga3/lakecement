@@ -18,11 +18,39 @@ const merriweather = Merriweather({
   display: 'swap',
 })
 
-export const metadata = generateMetadata({
-  title: 'Leaders in Cement Technology',
-  type: 'website',
-  images: ['/images/lake-cement-ltd.png'],
-});
+export const metadata = {
+  title: 'Lake Cement Ltd - Nyati Cement | Leaders in Cement Technology',
+  description: 'Lake Cement produces cement that is stronger and lasts longer. Our Nyati Cement brand is a leading cement brand in Tanzania and neighboring countries.',
+  metadataBase: new URL('https://nyaticemet.com'),
+  alternates: {
+    canonical: '/',
+  },
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icons/apple-touch-icon.png',
+  },
+  themeColor: '#F97316',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function RootLayout({ children }) {
   const organizationSchema = generateStructuredData({ type: 'organization' });
@@ -30,10 +58,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <head>
-        {/* Google Search Console Verification - Replace with your actual verification code */}
-        <meta name="google-site-verification" content="your-verification-code" />
-        
-        {/* PWA Tags */}
+        <link rel="manifest" href="/manifest.json" />
         <meta name="application-name" content="Nyati Cement" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -41,13 +66,11 @@ export default function RootLayout({ children }) {
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#F97316" />
-        
-        {/* Favicon Tags */}
-        <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <Script
           id="schema-organization"
           type="application/ld+json"
@@ -70,7 +93,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <Navbar />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

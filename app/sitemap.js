@@ -1,11 +1,26 @@
-import { getAllArticles } from '@/app/news/newsData'
+const newsArticles = [
+  {
+    id: 1,
+    date: '2024-05-01',
+    slug: 'dar-regional-commissioner-visit'
+  },
+  {
+    id: 2,
+    date: '2024-04-15',
+    slug: 'environmental-initiative'
+  },
+  {
+    id: 3,
+    date: '2024-04-01',
+    slug: 'community-support'
+  }
+];
 
 export default async function sitemap() {
   const baseUrl = 'https://nyaticemet.com'
   
-  // Get all news articles
-  const articles = getAllArticles()
-  const newsUrls = articles.map((article) => ({
+  // Generate news URLs
+  const newsUrls = newsArticles.map((article) => ({
     url: `${baseUrl}/news/${article.id}`,
     lastModified: new Date(article.date),
     changeFrequency: 'monthly',
@@ -28,6 +43,13 @@ export default async function sitemap() {
     '/careers',
     '/contact',
     '/blog',
+    '/blog/building-your-dream-home',
+    '/blog/compressive-strength-testing',
+    '/blog/concrete-curing',
+    '/blog/monsoon-construction',
+    '/blog/tanzania-infrastructure-boom',
+    '/blog/understanding-cement-grades',
+    '/blog/water-cement-ratio'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
