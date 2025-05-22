@@ -1,4 +1,4 @@
-import { getAllArticles } from './app/news/newsData'
+import { getAllArticles } from '@/app/news/newsData'
 
 export default async function sitemap() {
   const baseUrl = 'https://nyaticemet.com'
