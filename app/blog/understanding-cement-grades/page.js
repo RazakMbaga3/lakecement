@@ -1,12 +1,20 @@
-// app/blog/understanding-cement-grades/page.js
 import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-export const metadata = {
-  title: 'Understanding Cement Grades | Nyati Cement',
-  description: 'Learn how to choose the right Nyati Cement grade for your construction project with our comprehensive guide to cement applications and properties.',
+export async function generateMetadata() {
+  return generateBlogMetadata({
+    title: 'Understanding Cement Grades: Choosing the Right Nyati Cement',
+    description: 'Learn how to choose the right Nyati Cement grade for your construction project with our comprehensive guide to cement applications and properties.',
+    path: '/understanding-cement-grades',
+    publishDate: '2025-03-28',
+    authors: ['Nyati Cement Technical Team'],
+    category: 'Technical Knowledge',
+    tags: ['cement grades', 'cement types', 'construction materials', 'cement selection'],
+    image: '/images/blog/understanding-cement-grades.jpg'
+  });
 }
 
 // Related posts for this article

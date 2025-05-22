@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
-import { generateStructuredData } from '../lib/seo-utils';
+import { generateBlogPostSchema } from '../lib/structured-data';
 import { getImageMetadata, optimizeImageUrl } from '../lib/image-utils';
 
 export default function BlogPost({
@@ -15,10 +15,18 @@ export default function BlogPost({
   author = 'Lake Cement Ltd',
   image,
   slug,
-  relatedPosts = []
+  relatedPosts = [],
+  tags = []
 }) {
-  const articleSchema = generateStructuredData({
-    type: 'article',
+  const articleSchema = generateBlogPostSchema({
+    title,
+    description: excerpt,
+    path: slug,
+    publishDate: date,
+    authors: [author],
+    category,
+    image,
+    tags,
     title,
     description: excerpt,
     path: `/blog/${slug}`,

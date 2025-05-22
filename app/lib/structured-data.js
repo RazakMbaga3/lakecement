@@ -125,3 +125,39 @@ export function generateFAQSchema(questions) {
     }))
   };
 }
+
+export const generateBlogPostSchema = ({
+  title,
+  description,
+  path,
+  publishDate,
+  authors,
+  category,
+  image,
+  tags = []
+}) => {
+  const url = `https://lakecement.co.tz/blog${path}`;
+  const authorNames = authors.map(name => ({ '@type': 'Person', name }));
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: image.startsWith('http') ? image : `https://lakecement.co.tz${image}`,
+    url: url,
+    datePublished: publishDate,
+    dateModified: publishDate,
+    author: authorNames,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lake Cement Ltd',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://lakecement.co.tz/images/lake-cement-ltd.png'
+      }
+    },
+    keywords: tags.join(', '),
+    articleSection: category
+  };
+};

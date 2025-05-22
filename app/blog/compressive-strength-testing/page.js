@@ -1,12 +1,20 @@
-// app/blog/compressive-strength-testing/page.js
 import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-export const metadata = {
-  title: 'Why Compressive Strength Matters: Nyati Cement\'s Testing Standards | Nyati Cement',
-  description: 'Discover the importance of compressive strength in concrete performance and how Nyati Cement ensures consistent, high-quality products through rigorous testing standards.',
+export async function generateMetadata() {
+  return generateBlogMetadata({
+    title: 'Why Compressive Strength Matters: Nyati Cement\'s Testing Standards',
+    description: 'Discover the importance of compressive strength in concrete performance and how Nyati Cement ensures consistent, high-quality products through rigorous testing standards.',
+    path: '/compressive-strength-testing',
+    publishDate: '2025-03-22',
+    authors: ['Nyati Cement Quality Control Team'],
+    category: 'Technical Knowledge',
+    tags: ['compressive strength', 'cement testing', 'quality control', 'cement standards'],
+    image: '/images/blog/compression-test.jpg'
+  });
 }
 
 // Related posts for this article

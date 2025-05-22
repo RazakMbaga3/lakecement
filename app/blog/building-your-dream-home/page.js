@@ -2,7 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import BlogPost from '../../components/BlogPost';
 import Link from 'next/link';
-import { generateBlogPostMetadata, generateBlogPostSchema } from '../metadata';
+import { generateBlogMetadata } from '../../lib/blog-metadata';
+
+export async function generateMetadata() {
+  return generateBlogMetadata({
+    title: 'Building Your Dream Home with Nyati Cement: A Step-by-Step Guide',
+    description: 'Learn the step-by-step process of building a durable home using Nyati Cement products, from foundation to finishing work.',
+    path: '/building-your-dream-home',
+    publishDate: '2025-04-03',
+    authors: ['Lake Cement Technical Team'],
+    category: 'DIY & Home Building',
+    tags: ['home building', 'DIY construction', 'cement guide', 'house construction'],
+    image: '/images/blog/home.webp'
+  });
+}
+
 import Script from 'next/script';
 
 const blogData = {
@@ -15,8 +29,6 @@ const blogData = {
   author: 'Lake Cement Technical Team',
   tags: ['home building', 'DIY construction', 'cement guide', 'house construction']
 };
-
-export const metadata = generateBlogPostMetadata(blogData);
 
 // Related blog posts
 const relatedPosts = [

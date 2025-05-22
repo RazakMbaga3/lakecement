@@ -1,12 +1,20 @@
-// app/blog/water-cement-ratio/page.js
 import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-export const metadata = {
-  title: 'The Role of Water-Cement Ratio in Concrete Durability | Nyati Cement',
-  description: 'Understand how water-cement ratio affects concrete strength, durability, and workability. Learn the optimal ratios for different construction applications with Nyati Cement.',
+export async function generateMetadata() {
+  return generateBlogMetadata({
+    title: 'The Role of Water-Cement Ratio in Concrete Durability',
+    description: 'Understand how water-cement ratio affects concrete strength, durability, and workability. Learn the optimal ratios for different construction applications with Nyati Cement.',
+    path: '/water-cement-ratio',
+    publishDate: '2025-03-26',
+    authors: ['Nyati Cement Research Team'],
+    category: 'Technical Knowledge',
+    tags: ['water-cement ratio', 'concrete strength', 'concrete mix', 'construction tips'],
+    image: '/images/blog/water-cement-ratio.jpg'
+  });
 }
 
 // Related posts for this article

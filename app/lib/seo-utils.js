@@ -4,7 +4,7 @@ export const DEFAULT_SITE_TITLE = 'Leaders in Cement Technology | Nyati Cement';
 export const DEFAULT_SITE_DESCRIPTION = 'Lake Cement produces cement that is stronger and lasts longer. Our Nyati Cement brand is a leading cement brand in Tanzania and neighboring countries.';
 export const SITE_URL = 'https://nyaticemet.com';
 
-export function generateMetadata({ 
+export async function generateMetadata({ 
   title, 
   description, 
   path = '',
@@ -12,7 +12,8 @@ export function generateMetadata({
   images = ['/images/lake-cement-ltd.png'],
   published = null,
   modified = null,
-  tags = []
+  tags = [],
+  alternates = null
 }) {
   const fullTitle = title ? `${title} | ${DEFAULT_SITE_NAME}` : `${DEFAULT_SITE_TITLE} | ${DEFAULT_SITE_NAME}`;
   const fullDescription = description || DEFAULT_SITE_DESCRIPTION;

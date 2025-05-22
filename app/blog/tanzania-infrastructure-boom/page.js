@@ -3,25 +3,19 @@ import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-import { getMetadata } from '../../lib/metadata';
-
-export const metadata = getMetadata({
-  title: 'Tanzania\'s Infrastructure Boom: The Role of Quality Cement',
-  description: 'Explore Tanzania\'s infrastructure development and how quality cement contributes to building durable, sustainable projects.',
-  keywords: 'Tanzania infrastructure, construction projects, quality cement, infrastructure development, sustainable building',
-  alternates: {
-    canonical: '/blog/tanzania-infrastructure-boom',
-  },
-  openGraph: {
+export async function generateMetadata() {
+  return generateBlogMetadata({
     title: 'Tanzania\'s Infrastructure Boom: The Role of Quality Cement',
     description: 'Explore Tanzania\'s infrastructure development and how quality cement contributes to building durable, sustainable projects.',
-    type: 'article',
-    publishedTime: '2025-03-20',
+    path: '/tanzania-infrastructure-boom',
+    publishDate: '2025-03-20',
     authors: ['Nyati Cement Technical Team'],
-    tags: ['Infrastructure', 'Construction', 'Quality Cement', 'Tanzania', 'Development']
-  }
-});
+    tags: ['Tanzania infrastructure', 'construction projects', 'quality cement', 'infrastructure development', 'sustainable building'],
+    image: '/images/blog/infrastructure-boom.jpg'
+  });
+}
 
 // Related posts for this article
 const relatedPosts = [

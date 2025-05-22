@@ -1,4 +1,4 @@
-import { generateMetadata, generateStructuredData } from '../lib/seo-utils';
+// No need to import generateMetadata here since this is just a config file
 
 export const blogConfig = {
   title: 'Knowledge Hub | Nyati Cement Blog',
