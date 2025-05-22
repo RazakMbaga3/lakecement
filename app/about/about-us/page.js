@@ -191,7 +191,7 @@ export default function AboutUsPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="/images/aboutus/about-hero.jpg"
+              src="/images/aboutus/group1.jpg"
               alt="About Lake Cement"
               fill
               priority
