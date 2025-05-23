@@ -1,20 +1,12 @@
+// app/blog/understanding-cement-grades/page.js
 import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
-import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-export async function generateMetadata() {
-  return generateBlogMetadata({
-    title: 'Understanding Cement Grades: Choosing the Right Nyati Cement',
-    description: 'Learn how to choose the right Nyati Cement grade for your construction project with our comprehensive guide to cement applications and properties.',
-    path: '/understanding-cement-grades',
-    publishDate: '2025-03-28',
-    authors: ['Nyati Cement Technical Team'],
-    category: 'Technical Knowledge',
-    tags: ['cement grades', 'cement types', 'construction materials', 'cement selection'],
-    image: '/images/blog/understanding-cement-grades.jpg'
-  });
+export const metadata = {
+  title: 'Understanding Cement Grades | Nyati Cement',
+  description: 'Learn how to choose the right Nyati Cement grade for your construction project with our comprehensive guide to cement applications and properties.',
 }
 
 // Related posts for this article
@@ -60,11 +52,11 @@ export default function CementGradesPage() {
 
       <h2 className="text-2xl font-bold text-nyati-navy mt-8 mb-4">What Do Cement Grade Numbers Mean?</h2>
       <p>
-        The numbers in cement grades (such as 32.5N or 42.5R) indicate the minimum compressive strength in megapascals (MPa) the cement will achieve after 28 days of curing.
+        The numbers in cement grades (such as 32.5N or 42.5R) indicate the minimum compressive strength in megapascals (MPa) the cement will achieve after 28 days of curing. The letter indicates the rate of strength development:
       </p>
       <ul className="list-disc pl-6 mt-3 mb-6">
-         <li><strong>R</strong> (Rapid): Higher early strength development</li>
         <li><strong>N</strong> (Normal): Standard early strength development</li>
+        <li><strong>R</strong> (Rapid): Higher early strength development</li>
       </ul>
 
       <div className="bg-nyati-cream p-6 rounded-lg my-8">

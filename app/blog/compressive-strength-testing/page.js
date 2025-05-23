@@ -1,50 +1,40 @@
-import React from 'react'
-import BlogPost from '../../components/BlogPost'
-import Image from 'next/image'
-import Link from 'next/link'
-import { generateBlogMetadata } from '../../lib/blog-metadata';
+// app/blog/compressive-strength-testing/page.js
+import React from 'react';
+import Image from 'next/image';
+import BlogPost from '../../components/BlogPost';
+import Link from 'next/link';
 
-export async function generateMetadata() {
-  return generateBlogMetadata({
-    title: 'Why Compressive Strength Matters: Nyati Cement\'s Testing Standards',
-    description: 'Discover the importance of compressive strength in concrete performance and how Nyati Cement ensures consistent, high-quality products through rigorous testing standards.',
-    path: '/compressive-strength-testing',
-    publishDate: '2025-03-22',
-    authors: ['Nyati Cement Quality Control Team'],
-    category: 'Technical Knowledge',
-    tags: ['compressive strength', 'cement testing', 'quality control', 'cement standards'],
-    image: '/images/blog/compression-test.jpg'
-  });
-}
+export const metadata = {
+  title: 'Why Compressive Strength Matters: Nyati Cement\'s Testing Standards',
+  description: 'Learn about cement compressive strength testing and how Nyati Cement ensures consistent quality through rigorous testing procedures.',
+};
 
-// Related posts for this article
 const relatedPosts = [
   {
-    title: 'Understanding Cement Grades: Choosing the Right Nyati Cement for Your Project',
-    excerpt: 'Learn how to select the perfect cement grade for your specific construction needs with our comprehensive guide.',
+    title: 'Understanding Cement Grades',
+    excerpt: 'Learn how to select the perfect cement grade for your specific construction needs.',
     category: 'Technical Knowledge',
     date: 'March 28, 2025',
-    readTime: '7 min read',
+    readTime: '3 min read',
     slug: '/blog/understanding-cement-grades'
   },
   {
     title: 'The Role of Water-Cement Ratio in Concrete Durability',
-    excerpt: 'Discover how the water-cement ratio affects concrete strength, durability, and overall performance.',
+    excerpt: 'How water content affects concrete strength and durability.',
     category: 'Technical Knowledge',
-    date: 'April 4, 2025',
-    readTime: '8 min read',
+    date: 'March 26, 2025',
+    readTime: '2 min read',
     slug: '/blog/water-cement-ratio'
   }
-]
+];
 
-export default function CompressiveStrengthPage() {
+export default function CompressiveStrengthTestingPage() {
   return (
-    <BlogPost 
-      title="Why Compressive Strength Matters: Testing Standards"
-      date="April 11, 2025"
-      author="Nyati Cement Technical Team"
+    <BlogPost
+      title="Why Compressive Strength Matters: Nyati Cement's Testing Standards"
+      date="March 22, 2025"
       category="Technical Knowledge"
-      readTime="9 min read"
+      readTime="3 min read"
       relatedPosts={relatedPosts}
     >
       <p className="lead text-xl mb-6">
@@ -138,6 +128,8 @@ export default function CompressiveStrengthPage() {
               <th className="border border-gray-300 px-4 py-2 text-left">Contribution to Strength</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
           <tbody>
             <tr>
               <td className="border border-gray-300 px-4 py-2 font-medium">Tricalcium Silicate (C₃S)</td>

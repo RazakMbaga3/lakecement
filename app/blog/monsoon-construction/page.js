@@ -1,20 +1,12 @@
+// app/blog/monsoon-construction/page.js
 import React from 'react'
 import BlogPost from '../../components/BlogPost'
 import Image from 'next/image'
 import Link from 'next/link'
-import { generateBlogMetadata } from '../../lib/blog-metadata';
 
-export async function generateMetadata() {
-  return generateBlogMetadata({
-    title: 'Monsoon Construction Guide: Building with Cement During Rainy Seasons',
-    description: 'Learn essential techniques and best practices for successful cement construction during Tanzania\'s rainy seasons, from site preparation to curing and waterproofing.',
-    path: '/monsoon-construction',
-    publishDate: '2025-04-04',
-    authors: ['Nyati Cement Construction Specialists'],
-    category: 'Construction Best Practices',
-    tags: ['monsoon construction', 'rainy season', 'waterproofing', 'construction tips'],
-    image: '/images/blog/monsoon.webp'
-  });
+export const metadata = {
+  title: 'Monsoon Construction Guide: Building with Cement During Rainy Seasons | Nyati Cement',
+  description: 'Learn essential techniques and best practices for successful cement construction during Tanzania\'s rainy seasons, from site preparation to curing and waterproofing.',
 }
 
 // Related posts for this article

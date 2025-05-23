@@ -1,12 +1,11 @@
 {
   "name": "lc",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
+  "private": true,  "scripts": {
+    "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
