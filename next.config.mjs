@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
 import withPWA from 'next-pwa';
 
-const nextConfig = withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development'
-})({
+const config = {
   images: {
     domains: ['nyaticemet.com'],
     formats: ['image/avif', 'image/webp'],
@@ -16,7 +11,9 @@ const nextConfig = withPWA({
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['@/components'],
-    serverActions: true,
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -28,12 +25,14 @@ const nextConfig = withPWA({
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-});
+  }
+};
 
-export default withPWA({
+const nextConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development'
-})(nextConfig);
+})(config);
+
+export default nextConfig;
