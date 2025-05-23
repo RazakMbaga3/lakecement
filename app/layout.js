@@ -4,6 +4,7 @@ import Navbar from './components/ui/navbar'
 import Footer from './components/ui/footer'
 import Script from 'next/script'
 import { generateMetadata, generateStructuredData } from './lib/seo-utils'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -95,6 +96,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
