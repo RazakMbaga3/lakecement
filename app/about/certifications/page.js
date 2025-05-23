@@ -25,22 +25,22 @@ const certifications = [
     items: [
       {
         title: "Internal 42.5 N test certificate",
-        downloadLink: "/docs/RENEWED DOCS/TBS JUne 2024 42.5 N test results.pdf",
+        downloadLink: "/docs/16-W,NO-42.5N-28DAYS.pdf",
         subItems: []
       },
       {
         title: "Internal 42.5 R test certificate",
-        downloadLink: "/docs/RENEWED DOCS/TBS 42.5 R JUne 2024 test results.pdf",
+        downloadLink: "/docs/16-WNO-42.5R-28DAYS.pdf",
         subItems: []
       },
       {
         title: "Internal 32.5 N test certificate",
-        downloadLink: "/docs/RENEWED DOCS/TBS JUNE 24 test report 32.5 N.pdf",
+        downloadLink: "/docs/16-W,NO-32.5N-28DAYS.pdf",
         subItems: []
       },
       {
         title: "Internal OPC test certificate",
-        downloadLink: "/docs/RENEWED DOCS/TBS TEST REPORT NYATI CEMENT CEM I (OPC) 42.5N.pdf",
+        downloadLink: "/docs/16-W,NO-CEM I-42.5N-28DAYS.pdf",
         subItems: []
       }
     ]

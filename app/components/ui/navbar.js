@@ -158,13 +158,13 @@ export default function Navbar() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 transition-all duration-300 transform hover:scale-105">
+            <Link href="/" className="flex-shrink-0">
               <Image 
                 src="/images/logo.jpg" 
                 alt="Nyati Cement Logo" 
-                width={55} 
-                height={55} 
-                className="object-contain"
+                width={110} 
+                height={110}
+                className="h-20 w-auto object-contain"
                 priority
               />
             </Link>

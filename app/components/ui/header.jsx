@@ -51,7 +51,7 @@ export default function Header() {
                 alt="Lake Cement Logo" 
                 width={110} 
                 height={110} 
-                className="h-16 w-auto"
+                className="h-20 w-auto"
                 priority
               />
             </Link>
