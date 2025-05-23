@@ -14,9 +14,9 @@ export default function BlogPostSchema({ post }) {
   });
 
   return (
-    &lt;script
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-    /&gt;
+    />
   );
 }
