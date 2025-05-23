@@ -130,8 +130,6 @@ export default function CompressiveStrengthTestingPage() {
           </thead>
           <tbody>
             <tr>
-          <tbody>
-            <tr>
               <td className="border border-gray-300 px-4 py-2 font-medium">Tricalcium Silicate (C₃S)</td>
               <td className="border border-gray-300 px-4 py-2">3CaO·SiO₂</td>
               <td className="border border-gray-300 px-4 py-2">Rapid early strength development (first few days)</td>
