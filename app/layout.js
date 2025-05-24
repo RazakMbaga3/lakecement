@@ -20,7 +20,28 @@ export const metadata = {
   title: 'Lake Cement Ltd - Nyati Cement | Leaders in Cement Technology',
   description: 'Lake Cement produces cement that is stronger and lasts longer. Our Nyati Cement brand is a leading cement brand in Tanzania and neighboring countries.',
   keywords: 'Lake Cement, Nyati Cement, Tanzania cement, construction, building materials, cement technology, Dar es Salaam',
-  metadataBase: new URL('https://nyaticemet.com'), // Replace with your actual domain
+  metadataBase: new URL('https://lakecement.co.tz'),
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/images/favicon/web-app-manifest-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/images/favicon/web-app-manifest-512x512.png', type: 'image/png', sizes: '512x512' }
+    ],
+    shortcut: [
+      { url: '/favicon.png', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/favicon.png', type: 'image/png', sizes: '180x180' }
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/favicon.png',
+        color: '#F7941D' // Nyati Orange color
+      }
+    ],
+  },
 }
 
 export default function RootLayout({ children }) {
