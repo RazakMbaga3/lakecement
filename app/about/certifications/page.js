@@ -5,7 +5,7 @@ const certifications = [
     category: "Quality Standards",
     items: [
       {
-        image: "/images/certifications/9001-2015.jpeg",
+        image: "/images/certifications/9001.png",
         title: "ISO 9001:2008 - Quality Management System",
         downloadLink: "/docs/RENEWED DOCS/Latest ISO certificate- 2024 onwrad.pdf",
         alt: "ISO 9001 Logo",
@@ -13,12 +13,12 @@ const certifications = [
       },
    
       { 
-        image: "C:/images/certifications/ISO-14001-2015.jpeg",
+        image: "C:/images/certifications/14001.png",
         title: "ISO 14001:2015 – Environmental Management System",
         downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101B.PDF",
         subItems: []
       },
-      { image: "C:/images/certifications/iso-45001-2018.webp",              
+      { image: "C:/images/certifications/45001.png",              
         title: "ISO 45001:2018 – Occupational Health & Safety Management System",
         downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101C.PDF",
         subItems: []
