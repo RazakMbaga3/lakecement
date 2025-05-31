@@ -6,12 +6,23 @@ const certifications = [
     items: [
       {
         image: "/images/certifications/iso-9001-logo.png",
-        title: "ISO 9001:2008",
+        title: "ISO 9001:2008 - Quality Management System",
         downloadLink: "/docs/RENEWED DOCS/Latest ISO certificate- 2024 onwrad.pdf",
         alt: "ISO 9001 Logo",
         subItems: []
       },
+   
       {
+        title: "ISO 14001:2015 – Environmental Management System",
+        downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101B.PDF",
+        subItems: []
+      },
+      {
+        title: "ISO 45001:2018 – Occupational Health & Safety Management System",
+        downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101C.PDF",
+        subItems: []
+      },
+         {
         image: "/images/certifications/tbs_logo.jpg",
         title: "TBS Licence",
         downloadLink: "/docs/RENEWED DOCS/TBS CERTIFICATE FROM 2024-07-02 TO 2025-07-01.pdf",
