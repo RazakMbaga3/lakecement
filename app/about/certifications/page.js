@@ -13,12 +13,12 @@ const certifications = [
       },
    
       { 
-        image: "C:/images/certifications/14001.png",
+        image: "/images/certifications/14001.png",
         title: "ISO 14001:2015 – Environmental Management System",
         downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101B.PDF",
         subItems: []
       },
-      { image: "C:/images/certifications/45001.png",              
+      { image: "/images/certifications/45001.png",              
         title: "ISO 45001:2018 – Occupational Health & Safety Management System",
         downloadLink: "/docs/RENEWED DOCS/Cert Lake Cement TZ24-31101C.PDF",
         subItems: []
