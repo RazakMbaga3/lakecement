@@ -6,7 +6,7 @@ const certifications = [
     items: [
       {
         image: "/images/certifications/9001.png",
-        title: "ISO 9001:2008 - Quality Management System",
+        title: "ISO 9001:2015 - Quality Management System",
         downloadLink: "/docs/RENEWED DOCS/Latest ISO certificate- 2024 onwrad.pdf",
         alt: "ISO 9001 Logo",
         subItems: []
