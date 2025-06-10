@@ -77,7 +77,7 @@ const certifications = [
       {
         image: "/images/certifications/OSHA.png",
         title: "OSHA REGISTRATION Certificate",
-        downloadLink: "/docs/OSHA REGISTRATION CERTIFICATE.pdf",
+        downloadLink: "/docs/RENEWED DOCS/OSHA REGISTRATION CERTIFICATE.pdf",
         alt: "OSHA logo",
         subItems: []
       },
