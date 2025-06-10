@@ -75,8 +75,20 @@ const certifications = [
         subItems: []
       },
       {
-        title: "Business Licence",
+        image: "/images/certifications/OSHA.png",
+        title: "OSHA REGISTRATION Certificate",
+        downloadLink: "/docs/OSHA REGISTRATION CERTIFICATE.pdf",
+        alt: "OSHA logo",
+        subItems: []
+      },
+      {
+        title: "Head Office Business Licence",
         downloadLink: "/docs/RENEWED DOCS/Renewed business License - 2025.pdf",
+        subItems: []
+      },
+      {
+        title: "Factory Business Licence",
+        downloadLink: "/docs/RENEWED DOCS/Lake Cement Kimbiji Business License 2025.pdf",
         subItems: []
       },
       {
